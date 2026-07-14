@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Système Clair — Accompagnon</title>
+<style>
+  :root{
+    --navy:#2D3461;
+    --navy-dark:#1E2347;
+    --coral:#F07878;
+    --coral-dark:#e05f5f;
+    --cream:#FAF8F5;
+    --gray:#6b7080;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    color:var(--navy);
+    background:var(--cream);
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    color:var(--navy);
+  }
+  .container{max-width:1080px;margin:0 auto;padding:0 24px;}
+  a{text-decoration:none;}
+
+  /* Logo */
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo-badge{
+    width:38px;height:38px;border-radius:50%;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;flex-shrink:0;
+  }
+  .logo-badge span{color:#fff;font-weight:800;font-size:19px;}
+  .logo-badge::after{
+    content:"";position:absolute;bottom:2px;right:1px;
+    width:0;height:0;
+    border-left:5px solid transparent;
+    border-bottom:9px solid var(--coral);
+  }
+  .logo-text{font-weight:800;font-size:18px;color:var(--navy);}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,248,245,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(45,52,97,0.08);
+  }
+  header .container{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    border:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-coral{background:var(--coral);color:#fff;box-shadow:0 6px 16px rgba(240,120,120,0.35);}
+  .btn-coral:hover{background:var(--coral-dark);transform:translateY(-2px);}
+  .btn-small{padding:10px 20px;font-size:14px;}
+  .btn-outline{background:transparent;border:2px solid var(--navy);color:var(--navy);}
+
+  /* Hero */
+  .hero{
+    padding:72px 0 64px;
+    background:linear-gradient(180deg, var(--cream) 0%, #f2eee7 100%);
+    text-align:center;
+  }
+  .eyebrow{
+    display:inline-block;
+    background:rgba(240,120,120,0.12);
+    color:var(--coral-dark);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    padding:8px 16px;
+    border-radius:999px;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:44px;
+    max-width:820px;
+    margin:0 auto 20px;
+    line-height:1.15;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--coral);
+  }
+  .hero p.sub{
+    font-size:19px;
+    color:var(--gray);
+    max-width:640px;
+    margin:0 auto 34px;
+  }
+  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
+  .hero-note{font-size:13px;color:var(--gray);}
+
+  /* Pain section */
+  .section{padding:80px 0;}
+  .section-alt{background:#fff;}
+  .section-title{
+    font-size:32px;
+    text-align:center;
+    max-width:680px;
+    margin:0 auto 14px;
+  }
+  .section-sub{
+    text-align:center;
+    color:var(--gray);
+    font-size:17px;
+    max-width:600px;
+    margin:0 auto 48px;
+  }
+  .pain-quote{
+    background:var(--navy);
+    color:#fff;
+    border-radius:16px;
+    padding:40px;
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 48px;
+  }
+  .pain-quote p{font-size:22px;font-style:italic;font-weight:600;}
+  .pain-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+  }
+  .pain-item{
+    background:var(--cream);
+    border:1px solid rgba(45,52,97,0.08);
+    border-radius:12px;
+    padding:22px;
+    font-size:15px;
+  }
+  .pain-item .emoji{font-size:24px;margin-bottom:10px;display:block;}
+
+  /* Included */
+  .included-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:24px;
+  }
+  .included-card{
+    background:var(--cream);
+    border-radius:14px;
+    padding:28px;
+    border-left:4px solid var(--coral);
+  }
+  .included-card h3{font-size:18px;margin-bottom:8px;}
+  .included-card p{color:var(--gray);font-size:14.5px;}
+
+  /* Sessions timeline */
+  .timeline{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+  }
+  .tl-card{
+    background:#fff;
+    border:1px solid rgba(45,52,97,0.1);
+    border-radius:14px;
+    padding:26px;
+    position:relative;
+  }
+  .tl-num{
+    width:34px;height:34px;
+    background:var(--navy);
+    color:#fff;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:15px;
+    margin-bottom:16px;
+  }
+  .tl-card h3{font-size:16.5px;margin-bottom:10px;}
+  .tl-card ul{padding-left:18px;color:var(--gray);font-size:14px;}
+  .tl-card li{margin-bottom:4px;}
+
+  /* Avatar section */
+  .avatar-box{
+    background:var(--navy);
+    border-radius:20px;
+    padding:48px;
+    color:#fff;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  .avatar-box h2{color:#fff;font-size:28px;margin-bottom:16px;}
+  .avatar-box p{color:rgba(255,255,255,0.8);font-size:15px;margin-bottom:10px;}
+  .avatar-box .tag{
+    display:inline-block;background:var(--coral);color:#fff;
+    font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .avatar-list{list-style:none;}
+  .avatar-list li{
+    background:rgba(255,255,255,0.06);
+    border-radius:10px;
+    padding:14px 18px;
+    margin-bottom:10px;
+    font-size:14.5px;
+    color:#fff;
+  }
+
+  /* Pricing */
+  .pricing-wrap{display:flex;justify-content:center;}
+  .price-card{
+    background:#fff;
+    border:2px solid var(--coral);
+    border-radius:20px;
+    padding:44px;
+    max-width:440px;
+    width:100%;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(45,52,97,0.12);
+    position:relative;
+  }
+  .price-badge{
+    position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+    background:var(--coral);color:#fff;
+    font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+    padding:8px 18px;border-radius:999px;
+  }
+  .price-card h3{font-size:22px;margin:12px 0 4px;}
+  .price-amount{font-size:52px;font-weight:800;color:var(--navy);margin:12px 0 4px;}
+  .price-amount span{font-size:18px;color:var(--gray);font-weight:600;}
+  .price-list{text-align:left;margin:28px 0;list-style:none;}
+  .price-list li{
+    padding:10px 0;
+    border-bottom:1px solid rgba(45,52,97,0.08);
+    font-size:14.5px;
+    display:flex;gap:10px;align-items:flex-start;
+  }
+  .price-list li::before{content:"✓";color:var(--coral);font-weight:800;}
+  .guarantee-line{font-size:13px;color:var(--gray);margin-top:18px;}
+
+  /* Guarantee */
+  .guarantee-box{
+    max-width:760px;margin:0 auto;
+    background:var(--cream);
+    border-radius:16px;
+    padding:36px 40px;
+    border:1px dashed var(--coral);
+  }
+  .guarantee-box h3{font-size:19px;margin-bottom:12px;}
+  .guarantee-box p{color:var(--gray);font-size:14.5px;margin-bottom:8px;}
+
+  /* FAQ */
+  .faq-item{
+    border-bottom:1px solid rgba(45,52,97,0.1);
+    padding:20px 0;
+  }
+  .faq-item h3{font-size:16.5px;margin-bottom:8px;}
+  .faq-item p{color:var(--gray);font-size:14.5px;}
+
+  /* Final CTA */
+  .final-cta{
+    background:var(--navy);
+    color:#fff;
+    text-align:center;
+    padding:80px 0;
+  }
+  .final-cta h2{color:#fff;font-size:32px;margin-bottom:16px;}
+  .final-cta p{color:rgba(255,255,255,0.75);max-width:520px;margin:0 auto 32px;font-size:16px;}
+
+  footer{
+    background:var(--navy-dark);
+    color:rgba(255,255,255,0.5);
+    text-align:center;
+    padding:32px 0;
+    font-size:13px;
+  }
+  footer .logo-text{color:#fff;}
+
+  @media (max-width:720px){
+    .hero h1{font-size:32px;}
+    .avatar-box{grid-template-columns:1fr;padding:32px 24px;}
+    nav.nav-links{display:none;}
+    .section{padding:56px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+      <div class="logo-badge"><span>A</span></div>
+      <div class="logo-text">Accompagnon</div>
+    </div>
+    <a href="#offre" class="btn btn-coral btn-small">Réserver mon appel</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Coaching 1-on-1 · Francophone · 4 semaines</span>
+    <h1>Passe du <em>chaos</em> à la clarté — sans sacrifier ta famille ni ta santé mentale.</h1>
+    <p class="sub">Le Système Clair aide les entrepreneurs francophones débordés à organiser leur business ET leur vie en 4 sessions, 4 semaines. Un système concret, pas une autre formation théorique.</p>
+    <div class="hero-cta">
+      <a href="https://calendly.com/accompagnon" class="btn btn-coral" target="_blank" rel="noopener">Réserver mon appel diagnostic gratuit</a>
+      <a href="#offre" class="btn btn-outline">Voir l'offre — 497$</a>
+    </div>
+    <p class="hero-note">30 minutes, sans engagement · Places limitées chaque mois</p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Tu reconnais cette réalité ?</h2>
+    <p class="section-sub">Tu n'es pas paresseux. Tu es débordé intelligemment — et tu as besoin d'un système, pas d'une autre dose de motivation.</p>
+
+    <div class="pain-quote">
+      <p>"Je travaille fort, mais je n'avance pas aussi vite que je devrais — et je m'épuise dans le processus."</p>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-item"><span class="emoji">😵</span>Trop d'idées, trop de projets en même temps — rien ne se termine vraiment.</div>
+      <div class="pain-item"><span class="emoji">📋</span>Des listes infinies, mais peu d'avancement réel semaine après semaine.</div>
+      <div class="pain-item"><span class="emoji">😬</span>Tu te sens coupable de ne jamais "en faire assez", même en travaillant sans arrêt.</div>
+      <div class="pain-item"><span class="emoji">💑</span>Ton couple ou ta famille écope parce que le business prend toute la place.</div>
+      <div class="pain-item"><span class="emoji">🤯</span>Tu consommes des podcasts, formations, vidéos — sans jamais vraiment appliquer.</div>
+      <div class="pain-item"><span class="emoji">💸</span>Des revenus instables : bon mois, mauvais mois, en alternance.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="offre">
+  <div class="container">
+    <h2 class="section-title">Ce qui est inclus dans Le Système Clair</h2>
+    <p class="section-sub">Tout ce dont tu as besoin pour construire un système qui continue de fonctionner après le programme.</p>
+
+    <div class="included-grid">
+      <div class="included-card">
+        <h3>🗓️ 4 sessions Zoom 1-on-1</h3>
+        <p>60 minutes par semaine, pendant 4 semaines, entièrement adaptées à ta réalité.</p>
+      </div>
+      <div class="included-card">
+        <h3>🏛️ Accès au Vault Accompagnon</h3>
+        <p>Bibliothèque complète de templates et systèmes prêts à l'emploi (productivité, business, famille).</p>
+      </div>
+      <div class="included-card">
+        <h3>💬 Support entre les sessions</h3>
+        <p>Un accompagnement continu par messages, pas juste 4 heures de coaching isolées.</p>
+      </div>
+      <div class="included-card">
+        <h3>📈 Plan d'action personnalisé 90 jours</h3>
+        <p>Tu repars avec une feuille de route claire, pas juste des notes de séance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">La structure des 4 sessions</h2>
+    <p class="section-sub">Une progression simple : diagnostic, business, vie personnelle, puis intégration.</p>
+
+    <div class="timeline">
+      <div class="tl-card">
+        <div class="tl-num">1</div>
+        <h3>Diagnostic & Fondations</h3>
+        <ul>
+          <li>Audit complet vie et business</li>
+          <li>Identifier les 3 zones de chaos prioritaires</li>
+          <li>Tableau de bord quotidien mis en place</li>
+        </ul>
+      </div>
+      <div class="tl-card">
+        <div class="tl-num">2</div>
+        <h3>Système Business</h3>
+        <ul>
+          <li>CRM simple + pipeline de vente</li>
+          <li>Calendrier éditorial</li>
+          <li>Tracker de revenus</li>
+        </ul>
+      </div>
+      <div class="tl-card">
+        <div class="tl-num">3</div>
+        <h3>Système Vie & Famille</h3>
+        <ul>
+          <li>Routines familiales</li>
+          <li>Budget couple</li>
+          <li>Communication et équilibre</li>
+        </ul>
+      </div>
+      <div class="tl-card">
+        <div class="tl-num">4</div>
+        <h3>Intégration & Plan 90 jours</h3>
+        <ul>
+          <li>Consolider tous les systèmes</li>
+          <li>Plan de croissance personnalisé</li>
+          <li>Prochaines étapes claires</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="avatar-box">
+      <div>
+        <span class="tag">C'est pour toi si…</span>
+        <h2>Tu génères des revenus, mais tu te sens constamment débordé.</h2>
+        <p>Entrepreneur ou solopreneur francophone, en couple, souvent parent — tu avances, mais au prix de ta santé mentale et de ta présence en famille.</p>
+        <p>Accompagnon n'est pas du coaching motivation générique. C'est un accompagnement concret, francophone, adapté à ta réalité — pas la méthode "hustle" américaine déconnectée.</p>
+      </div>
+      <ul class="avatar-list">
+        <li>"J'ai trop de choses en tête."</li>
+        <li>"Je sais quoi faire, mais je ne le fais pas."</li>
+        <li>"Je suis tanné d'être toujours dans le rush."</li>
+        <li>"Mon couple souffre de mon business."</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">L'investissement</h2>
+    <p class="section-sub">Le prix représente moins que ce que ton chaos actuel te coûte déjà en temps, en stress et en conflits.</p>
+
+    <div class="pricing-wrap">
+      <div class="price-card">
+        <span class="price-badge">⭐ Système Clair</span>
+        <h3>4 semaines pour retrouver ta clarté</h3>
+        <div class="price-amount">497$ <span>/ programme complet</span></div>
+        <ul class="price-list">
+          <li>4 sessions Zoom 1-on-1 (60 min)</li>
+          <li>Accès complet au Vault Accompagnon</li>
+          <li>Support par messages entre les sessions</li>
+          <li>Plan d'action personnalisé 90 jours</li>
+          <li>Templates et systèmes clé en main</li>
+        </ul>
+        <a href="https://calendly.com/accompagnon" class="btn btn-coral" style="width:100%;" target="_blank" rel="noopener">Réserver mon appel diagnostic</a>
+        <p class="guarantee-line">Appel gratuit de 30 min avant tout engagement · Garantie 7 jours</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="guarantee-box">
+      <h3>🛡️ Garantie 7 jours + garantie de résultat</h3>
+      <p>7 jours après ta 1ère séance de cadrage → remboursement intégral, sans justification.</p>
+      <p>Après ce délai, si tu as fait le travail et que tu n'as pas plus de clarté après 3 semaines, Seby continue de t'accompagner gratuitement jusqu'à ce que ce soit réglé.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Questions fréquentes</h2>
+    <div style="max-width:700px;margin:0 auto;">
+      <div class="faq-item">
+        <h3>Est-ce que ça fonctionne si je n'ai jamais réussi à m'organiser ?</h3>
+        <p>Oui — c'est exactement pour ça que le système est construit avec toi, sur mesure, plutôt qu'imposé de l'extérieur comme une app ou un template générique.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Combien de temps ça prend chaque semaine ?</h3>
+        <p>Une session de 60 minutes par semaine, plus le temps d'appliquer entre les séances — tu avances à ton rythme avec du support continu.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Qu'est-ce qui se passe après les 4 semaines ?</h3>
+        <p>Tu repars avec un système complet et un plan 90 jours conçu pour continuer à fonctionner sans toi devoir tout réinventer chaque mois.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Comment ça commence ?</h3>
+        <p>Un appel diagnostic gratuit de 30 minutes pour voir si c'est le bon fit — aucun engagement avant ça.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Prêt à sortir du chaos ?</h2>
+    <p>Réserve ton appel diagnostic gratuit de 30 minutes. On regarde ta situation ensemble, sans pression.</p>
+    <a href="https://calendly.com/accompagnon" class="btn btn-coral" target="_blank" rel="noopener">Réserver mon appel maintenant</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="logo-text" style="margin-bottom:8px;">Accompagnon</div>
+    <div>Organise ta vie. Libère ton potentiel. — © 2026 Accompagnon</div>
+  </div>
+</footer>
+
+</body>
+</html>
