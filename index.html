@@ -7,7 +7,7 @@
 <meta name="description" content="Le Système Clair aide les entrepreneurs francophones débordés à organiser leur business et leur vie en 4 sessions, 4 semaines. Coaching 1-on-1, 497$.">
 <meta name="theme-color" content="#2D3461">
 <meta property="og:title" content="Le Système Clair — Accompagnon">
-<meta property="og:description" content="Passe du chaos à la clarté — sans sacrifier ta famille ni ta santé mentale. Coaching 1-on-1, 4 semaines, 497$.">
+<meta property="og:description" content="Passe du chaos à la clarté sans sacrifier ta famille ni ta santé mentale. Coaching 1-on-1, 4 semaines, 497$.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='white' stroke='%232D3461' stroke-width='5'/%3E%3Cpath d='M50 29 L33 68 L42 68 L50 46 Z M50 29 L67 68 L58 68 L50 46 Z M44 56 L56 56 L58 61 L42 61 Z' fill='%232D3461'/%3E%3Cpolygon points='42,71 58,71 50,83' fill='%23F07878'/%3E%3C/svg%3E">
 <style>
@@ -267,19 +267,30 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:18px;
 }
 .pain-item{
-background:var(--surface);
-border:1px solid var(--line);
+position:relative;
 border-radius:20px;
-padding:30px;
-font-size:15.5px;
-color:var(--ink);
-line-height:1.55;
 overflow:hidden;
-transition:transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out), border-color var(--dur) ease;
+min-height:230px;
+display:flex;
+align-items:flex-end;
+box-shadow:var(--shadow-sm);
+background-size:cover;
+background-position:center;
+transition:transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
 }
-.pain-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:transparent;}
-.pain-item .emoji{font-size:27px;margin-bottom:16px;display:block;transition:transform var(--dur) var(--ease-spring);}
-.pain-item:hover .emoji{transform:scale(1.15) rotate(-6deg);}
+.pain-item::before{
+content:"";position:absolute;inset:0;
+background:linear-gradient(180deg, rgba(15,18,38,0.08) 0%, rgba(15,18,38,0.6) 55%, rgba(15,18,38,0.92) 100%);
+}
+.pain-item span.txt{
+position:relative;z-index:1;
+color:#fff;
+font-size:15px;
+line-height:1.5;
+font-weight:500;
+padding:24px;
+}
+.pain-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
 
 /* Transformation (before/after) */
 .transform-grid{
@@ -645,7 +656,7 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="orb orb-2"></div>
 <div class="container">
 <span class="eyebrow load-in"><span class="dot"></span>Coaching 1-on-1 · Francophone · 4 semaines</span>
-<h1 class="load-in">Passe du <em>chaos</em> à la clarté — sans sacrifier ta famille ni ta santé mentale.</h1>
+<h1 class="load-in">Passe du <em>chaos</em> à la clarté sans sacrifier ta famille ni ta santé mentale.</h1>
 <p class="sub load-in">Le Système Clair aide les entrepreneurs francophones débordés à organiser leur business ET leur vie en 4 sessions, 4 semaines. Un système concret, pas une autre formation théorique.</p>
 <div class="hero-cta load-in">
 <a href="https://calendly.com/accompagnon" class="btn btn-coral magnetic" target="_blank" rel="noopener">Réserver mon appel diagnostic gratuit</a>
@@ -661,26 +672,26 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <section class="section section-alt">
 <div class="container">
 <h2 class="section-title reveal">Tu reconnais cette réalité ?</h2>
-<p class="section-sub reveal">Tu n'es pas paresseux. Tu es débordé intelligemment — et tu as besoin d'un système, pas d'une autre dose de motivation.</p>
+<p class="section-sub reveal">Tu n'es pas paresseux. Tu es débordé intelligemment et tu as besoin d'un système, pas d'une autre dose de motivation.</p>
 
 <div class="pain-quote reveal">
-<p>"Je travaille fort, mais je n'avance pas aussi vite que je devrais — et je m'épuise dans le processus."</p>
+<p>"Je travaille fort, mais je n'avance pas aussi vite que je devrais. Je m'épuise dans le processus."</p>
 </div>
 
 <div class="pain-grid reveal-stagger">
-<div class="pain-item reveal spotlight" style="--i:0"><span class="emoji">😵</span>Trop d'idées, trop de projets en même temps — rien ne se termine vraiment.</div>
-<div class="pain-item reveal spotlight" style="--i:1"><span class="emoji">📋</span>Des listes infinies, mais peu d'avancement réel semaine après semaine.</div>
-<div class="pain-item reveal spotlight" style="--i:2"><span class="emoji">😬</span>Tu te sens coupable de ne jamais "en faire assez", même en travaillant sans arrêt.</div>
-<div class="pain-item reveal spotlight" style="--i:3"><span class="emoji">💑</span>Ton couple ou ta famille écope parce que le business prend toute la place.</div>
-<div class="pain-item reveal spotlight" style="--i:4"><span class="emoji">🤯</span>Tu consommes des podcasts, formations, vidéos — sans jamais vraiment appliquer.</div>
-<div class="pain-item reveal spotlight" style="--i:5"><span class="emoji">💸</span>Des revenus instables : bon mois, mauvais mois, en alternance.</div>
+<div class="pain-item reveal spotlight" style="--i:0;background-image:url('https://images.pexels.com/photos/6539020/pexels-photo-6539020.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Trop d'idées, trop de projets en même temps. Rien ne se termine vraiment.</span></div>
+<div class="pain-item reveal spotlight" style="--i:1;background-image:url('https://images.pexels.com/photos/36950612/pexels-photo-36950612.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Des listes infinies, mais peu d'avancement réel semaine après semaine.</span></div>
+<div class="pain-item reveal spotlight" style="--i:2;background-image:url('https://images.pexels.com/photos/7984773/pexels-photo-7984773.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Tu te sens coupable de ne jamais "en faire assez", même en travaillant sans arrêt.</span></div>
+<div class="pain-item reveal spotlight" style="--i:3;background-image:url('https://images.pexels.com/photos/17511838/pexels-photo-17511838.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Ton couple ou ta famille écope parce que le business prend toute la place.</span></div>
+<div class="pain-item reveal spotlight" style="--i:4;background-image:url('https://images.pexels.com/photos/5399024/pexels-photo-5399024.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Tu consommes des podcasts, formations et vidéos sans jamais vraiment appliquer.</span></div>
+<div class="pain-item reveal spotlight" style="--i:5;background-image:url('https://images.pexels.com/photos/7111490/pexels-photo-7111490.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Des revenus instables, un bon mois, un mauvais mois.</span></div>
 </div>
 </div>
 </section>
 
 <section class="section">
 <div class="container">
-<h2 class="section-title reveal">Du chaos à la clarté — concrètement</h2>
+<h2 class="section-title reveal">Du chaos à la clarté, concrètement</h2>
 <p class="section-sub reveal">Pas une promesse abstraite. Un vrai changement dans ta réalité quotidienne.</p>
 <div class="transform-grid reveal-stagger">
 <div class="transform-card reveal" style="--i:0">
@@ -692,7 +703,7 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="transform-card reveal" style="--i:2">
 <div class="transform-img"><img src="https://images.pexels.com/photos/33136468/pexels-photo-33136468.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bureau organisé avec planificateur hebdomadaire" loading="lazy"></div>
 <span class="transform-label transform-label-after">Après</span>
-<p>Système clair, priorités définies, l'esprit tranquille — et du temps pour ce qui compte vraiment.</p>
+<p>Système clair, priorités définies, l'esprit tranquille et du temps pour ce qui compte vraiment.</p>
 </div>
 </div>
 </div>
@@ -712,7 +723,7 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <span class="tag">Ton coach</span>
 <h2>Salut, moi c'est Sébastien.</h2>
 <p>Il y a quelques années, j'étais exactement à ta place : un business qui roulait, mais un chaos total dans ma tête et dans ma vie de famille. J'ai construit le Système Clair parce que j'avais besoin de ce système-là moi-même, avant de l'offrir à qui que ce soit d'autre.</p>
-<p>Aujourd'hui, j'accompagne des entrepreneurs francophones à travers exactement ce que j'ai vécu — pas de théorie, juste ce qui fonctionne vraiment dans la vraie vie.</p>
+<p>Aujourd'hui, j'accompagne des entrepreneurs francophones à travers exactement ce que j'ai vécu. Pas de théorie, juste ce qui fonctionne vraiment dans la vraie vie.</p>
 <p class="founder-sign">— Sébastien, fondateur d'Accompagnon</p>
 </div>
 </div>
@@ -728,12 +739,12 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="included-card reveal spotlight tilt" style="--i:0">
 <div class="icon">🗓️</div>
 <h3>4 sessions Zoom 1-on-1</h3>
-<p>60 minutes par semaine, pendant 4 semaines, entièrement adaptées à ta réalité.</p>
+<p>60 minutes par semaine pendant 4 semaines, entièrement adaptées à ta réalité.</p>
 </div>
 <div class="included-card reveal spotlight tilt" style="--i:1">
 <div class="icon">🏛️</div>
 <h3>Accès au Vault Accompagnon</h3>
-<p>Bibliothèque complète de templates et systèmes prêts à l'emploi (productivité, business, famille).</p>
+<p>Bibliothèque complète de templates et systèmes de productivité, business et famille prêts à l'emploi.</p>
 </div>
 <div class="included-card reveal spotlight tilt" style="--i:2">
 <div class="icon">💬</div>
@@ -744,6 +755,21 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="icon">📈</div>
 <h3>Plan d'action personnalisé 90 jours</h3>
 <p>Tu repars avec une feuille de route claire, pas juste des notes de séance.</p>
+</div>
+<div class="included-card reveal spotlight tilt" style="--i:4">
+<div class="icon">📄</div>
+<h3>Templates et guides</h3>
+<p>Des outils prêts à l'emploi pour appliquer le système sans repartir de zéro.</p>
+</div>
+<div class="included-card reveal spotlight tilt" style="--i:5">
+<div class="icon">📚</div>
+<h3>Liste de ressources</h3>
+<p>Une sélection d'outils et de références triés sur le volet pour continuer à progresser.</p>
+</div>
+<div class="included-card reveal spotlight tilt" style="--i:6">
+<div class="icon">🤖</div>
+<h3>1 mois d'Accompagnon.Ai Ultimate</h3>
+<p>Accès offert d'un mois au plan Ultimate d'Accompagnon.Ai, l'app de productivité propulsée par l'IA.</p>
 </div>
 </div>
 </div>
@@ -805,8 +831,8 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div>
 <span class="tag">C'est pour toi si…</span>
 <h2>Tu génères des revenus, mais tu te sens constamment débordé.</h2>
-<p>Entrepreneur ou solopreneur francophone, en couple, souvent parent — tu avances, mais au prix de ta santé mentale et de ta présence en famille.</p>
-<p>Accompagnon n'est pas du coaching motivation générique. C'est un accompagnement concret, francophone, adapté à ta réalité — pas la méthode "hustle" américaine déconnectée.</p>
+<p>Tu es entrepreneur ou solopreneur francophone, souvent en couple et parent. Tu avances, mais au prix de ta santé mentale et de ta présence en famille.</p>
+<p>Accompagnon n'est pas du coaching motivation générique. C'est un accompagnement concret, francophone, adapté à ta réalité, pas la méthode "hustle" américaine déconnectée.</p>
 </div>
 <ul class="avatar-list">
 <li>"J'ai trop de choses en tête."</li>
@@ -850,7 +876,7 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div>
 <h3>Garantie 7 jours + garantie de résultat</h3>
 <p>7 jours après ta 1ère séance de cadrage → remboursement intégral, sans justification.</p>
-<p>Après ce délai, si tu as fait le travail et que tu n'as pas plus de clarté après 3 semaines, Seby continue de t'accompagner gratuitement jusqu'à ce que ce soit réglé.</p>
+<p>Après ce délai, si tu as fait le travail et que tu n'as pas plus de clarté après 3 semaines, Accompagnon continue de t'accompagner gratuitement jusqu'à ce que ce soit réglé.</p>
 </div>
 </div>
 </div>
@@ -865,14 +891,14 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 Est-ce que ça fonctionne si je n'ai jamais réussi à m'organiser ?
 <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </button>
-<div class="faq-a"><div class="faq-a-inner"><p>Oui — c'est exactement pour ça que le système est construit avec toi, sur mesure, plutôt qu'imposé de l'extérieur comme une app ou un template générique.</p></div></div>
+<div class="faq-a"><div class="faq-a-inner"><p>Oui, c'est exactement pour ça que le système est construit avec toi sur mesure, plutôt qu'imposé de l'extérieur comme une app ou un template générique.</p></div></div>
 </div>
 <div class="faq-item reveal" style="--i:1">
 <button class="faq-q" aria-expanded="false">
 Combien de temps ça prend chaque semaine ?
 <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </button>
-<div class="faq-a"><div class="faq-a-inner"><p>Une session de 60 minutes par semaine, plus le temps d'appliquer entre les séances — tu avances à ton rythme avec du support continu.</p></div></div>
+<div class="faq-a"><div class="faq-a-inner"><p>Une session de 60 minutes par semaine, plus le temps d'appliquer entre les séances. Tu avances à ton rythme avec du support continu.</p></div></div>
 </div>
 <div class="faq-item reveal" style="--i:2">
 <button class="faq-q" aria-expanded="false">
@@ -886,7 +912,7 @@ Qu'est-ce qui se passe après les 4 semaines ?
 Comment ça commence ?
 <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </button>
-<div class="faq-a"><div class="faq-a-inner"><p>Un appel diagnostic gratuit de 30 minutes pour voir si c'est le bon fit — aucun engagement avant ça.</p></div></div>
+<div class="faq-a"><div class="faq-a-inner"><p>Un appel diagnostic gratuit de 30 minutes pour voir si c'est le bon fit. Aucun engagement avant ça.</p></div></div>
 </div>
 </div>
 </div>
@@ -911,7 +937,7 @@ Comment ça commence ?
 </svg>
 <div class="logo-text">Accompagnon</div>
 </div>
-<div>Organise ta vie. Libère ton potentiel. — © 2026 Accompagnon</div>
+<div>Organise ta vie. Libère ton potentiel. · © 2026 Accompagnon</div>
 </div>
 </footer>
 
