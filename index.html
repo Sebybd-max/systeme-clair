@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Le Système Clair — Accompagnon</title>
-<meta name="description" content="Le Système Clair aide les francophones débordés, entrepreneurs ou salariés, à organiser leur travail et leur vie en 4 semaines. Coaching 1-on-1, 497$.">
-<meta name="theme-color" content="#2D3461">
-<meta property="og:title" content="Le Système Clair — Accompagnon">
-<meta property="og:description" content="Passe du chaos à la clarté sans sacrifier ta famille ni ta santé mentale. Coaching 1-on-1, 4 semaines, 497$.">
+<title>Le Système Affaires — Accompagnon</title>
+<meta name="description" content="Le Système Affaires aide les entrepreneurs solos et travailleurs autonomes à structurer leur business ET leur tête en 3 mois — moins de chaos, des systèmes qui tiennent, un plan clair.">
+<meta name="theme-color" content="#313757">
+<meta property="og:title" content="Le Système Affaires — Accompagnon">
+<meta property="og:description" content="Structure ton business ET ta tête en 3 mois. Moins de chaos, des systèmes qui tiennent, un plan clair au lieu de courir après le feu.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='white' stroke='%232D3461' stroke-width='5'/%3E%3Cpath d='M50 29 L33 68 L42 68 L50 46 Z M50 29 L67 68 L58 68 L50 46 Z M44 56 L56 56 L58 61 L42 61 Z' fill='%232D3461'/%3E%3Cpolygon points='42,71 58,71 50,83' fill='%23F07878'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='white' stroke='%23313757' stroke-width='5'/%3E%3Cpath d='M50 29 L33 68 L42 68 L50 46 Z M50 29 L67 68 L58 68 L50 46 Z M44 56 L56 56 L58 61 L42 61 Z' fill='%23313757'/%3E%3Cpolygon points='42,71 58,71 50,83' fill='%23f66871'/%3E%3C/svg%3E">
 <style>
 :root{
---navy:#2D3461;
---navy-soft:#454c7d;
---navy-deep:#161a35;
---coral:#F07878;
---coral-dark:#df6360;
+--navy:#313757;
+--navy-soft:#474d72;
+--navy-deep:#1c2038;
+--coral:#f66871;
+--coral-dark:#b45868;
 --bg:#fbfbfd;
 --surface:#ffffff;
 --surface-2:#f5f5f7;
@@ -30,8 +30,8 @@
 --shadow-sm:0 8px 20px -12px rgba(0,0,0,.12), 0 0 0 .5px rgba(0,0,0,.05);
 --shadow-md:0 20px 40px -18px rgba(0,0,0,.16), 0 0 0 .5px rgba(0,0,0,.05);
 --shadow-lg:0 40px 80px -30px rgba(0,0,0,.22), 0 0 0 .5px rgba(0,0,0,.06);
---shadow-navy:0 30px 60px -22px rgba(45,52,97,.45);
---shadow-coral:0 14px 28px -10px rgba(240,120,120,.5);
+--shadow-navy:0 30px 60px -22px rgba(49,55,87,.45);
+--shadow-coral:0 14px 28px -10px rgba(246,104,113,.5);
 
 --ease-out:cubic-bezier(.16,1,.3,1);
 --ease-spring:cubic-bezier(.34,1.56,.64,1);
@@ -40,7 +40,7 @@
 --dur-slow:600ms;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;scroll-padding-top:88px;}
+html{scroll-behavior:smooth;scroll-padding-top:88px;overflow-x:hidden;max-width:100%;}
 body{
 font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Helvetica, Arial, sans-serif;
 color:var(--ink);
@@ -50,588 +50,260 @@ line-height:1.55;
 text-rendering:optimizeLegibility;
 overflow-x:hidden;
 }
-h1,h2,h3{
-font-weight:700;
-letter-spacing:-0.03em;
-color:var(--ink);
-}
+h1,h2,h3{font-weight:700;letter-spacing:-0.03em;color:var(--ink);}
 .container{max-width:1160px;margin:0 auto;padding:0 28px;}
 a{text-decoration:none;color:inherit;}
-::selection{background:rgba(240,120,120,0.25);}
+::selection{background:rgba(246,104,113,0.25);}
 :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px;}
 
 @media (prefers-reduced-motion: reduce){
 *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
 }
 
-/* Scroll progress */
-.progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:200;
-background:linear-gradient(90deg, var(--navy), var(--coral));
-transition:width 80ms linear;
-}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:200;background:linear-gradient(90deg, var(--navy), var(--coral));transition:width 80ms linear;}
 
-/* Reveal on scroll */
-.reveal{opacity:0;transform:translateY(28px) scale(.98);filter:blur(6px);
-transition:opacity 1s var(--ease-out), transform 1s var(--ease-out), filter 1s var(--ease-out);}
+.reveal{opacity:0;transform:translateY(28px) scale(.98);filter:blur(6px);transition:opacity 1s var(--ease-out), transform 1s var(--ease-out), filter 1s var(--ease-out);}
 .reveal.is-visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
 .reveal-stagger.is-visible > *{transition-delay:calc(var(--i, 0) * 100ms);}
-
-/* Load-in (hero, above the fold — not scroll gated) */
-.load-in{opacity:0;transform:translateY(22px) scale(.98);filter:blur(8px);
-transition:opacity .9s var(--ease-out), transform .9s var(--ease-out), filter .9s var(--ease-out);}
+.load-in{opacity:0;transform:translateY(22px) scale(.98);filter:blur(8px);transition:opacity .9s var(--ease-out), transform .9s var(--ease-out), filter .9s var(--ease-out);}
 .load-in.is-loaded{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
 
-/* Spotlight cursor-follow highlight */
 .spotlight{position:relative;}
-.spotlight::after{
-content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
-background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%), rgba(240,120,120,.12), transparent 65%);
-opacity:0;transition:opacity var(--dur) ease;
-}
+.spotlight::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%), rgba(246,104,113,.12), transparent 65%);opacity:0;transition:opacity var(--dur) ease;}
 .spotlight:hover::after{opacity:1;}
-
-/* Tilt (3D perspective on hover) */
 .tilt{transform-style:preserve-3d;will-change:transform;}
 
-/* Logo */
 .logo{display:flex;align-items:center;gap:10px;}
-.logo-mark{flex-shrink:0;display:block;filter:drop-shadow(0 3px 8px rgba(45,52,97,0.3));}
+.logo-mark{flex-shrink:0;display:block;filter:drop-shadow(0 3px 8px rgba(49,55,87,0.3));}
 .logo-text{font-weight:700;font-size:16px;color:var(--ink);letter-spacing:-0.01em;}
 .logo-word{height:19px;width:auto;display:block;}
+.brand-sub{font-size:11px;font-weight:600;color:var(--coral-dark);letter-spacing:.04em;text-transform:uppercase;margin-left:2px;}
 
-/* Header */
-header{
-position:sticky;top:0;z-index:100;
-background:rgba(251,251,253,0.68);
-backdrop-filter:blur(20px) saturate(180%);
--webkit-backdrop-filter:blur(20px) saturate(180%);
-border-bottom:1px solid transparent;
-transition:border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out), background var(--dur) var(--ease-out);
-}
+header{position:sticky;top:0;z-index:100;background:rgba(251,251,253,0.68);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid transparent;transition:border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out), background var(--dur) var(--ease-out);}
 header.is-scrolled{border-bottom-color:var(--line);box-shadow:0 1px 24px -8px rgba(0,0,0,0.1);}
-header .container{
-display:flex;align-items:center;justify-content:space-between;
-padding-top:14px;padding-bottom:14px;
-gap:24px;
-}
+header .container{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px;gap:24px;}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none;flex:1;justify-content:center;}
-.nav-links a{
-font-size:14px;font-weight:500;color:var(--gray);
-transition:color var(--dur-fast) ease;
-position:relative;
-}
-.nav-links a::after{
-content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;
-background:var(--coral);transform:scaleX(0);transform-origin:right;
-transition:transform var(--dur) var(--ease-out);
-}
+.nav-links a{font-size:14px;font-weight:500;color:var(--gray);transition:color var(--dur-fast) ease;position:relative;}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;background:var(--coral);transform:scaleX(0);transform-origin:right;transition:transform var(--dur) var(--ease-out);}
 .nav-links a:hover{color:var(--ink);}
 .nav-links a:hover::after{transform:scaleX(1);transform-origin:left;}
 
-.btn{
-display:inline-flex;align-items:center;justify-content:center;
-padding:14px 28px;
-border-radius:980px;
-font-weight:600;
-font-size:15px;
-cursor:pointer;
-border:none;
-position:relative;
-isolation:isolate;
-overflow:hidden;
-transition:transform var(--dur-fast) var(--ease-out), box-shadow var(--dur) var(--ease-out), background var(--dur-fast) ease;
-letter-spacing:-0.01em;
-white-space:nowrap;
-}
-.btn::before{
-content:"";position:absolute;inset:0;
-background:linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 55%);
-opacity:.9;pointer-events:none;
-}
-.btn-coral{
-background:linear-gradient(180deg, #f4908f, var(--coral));
-color:#fff;
-box-shadow:var(--shadow-coral);
-}
-.btn-coral:hover{box-shadow:0 20px 36px -10px rgba(240,120,120,0.6);}
+.menu-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;flex-shrink:0;background:none;border:none;cursor:pointer;padding:0;border-radius:10px;transition:background var(--dur-fast) ease;}
+.menu-toggle:hover{background:rgba(49,55,87,0.06);}
+.menu-toggle span{display:block;width:20px;height:2px;background:var(--navy);border-radius:2px;transition:transform var(--dur) var(--ease-out), opacity var(--dur-fast) ease;}
+.menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.is-open span:nth-child(2){opacity:0;}
+.menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.mobile-nav-backdrop{position:fixed;inset:0;background:rgba(15,18,38,0.4);backdrop-filter:blur(2px);z-index:98;opacity:0;pointer-events:none;transition:opacity var(--dur) ease;}
+.mobile-nav-backdrop.is-open{opacity:1;pointer-events:auto;}
+.mobile-nav{display:block;position:fixed;top:0;right:0;height:100vh;width:min(320px, 84vw);background:var(--surface);box-shadow:var(--shadow-lg);padding:100px 32px 40px;transform:translateX(100%);transition:transform var(--dur) var(--ease-out);z-index:99;overflow-y:auto;}
+.mobile-nav.is-open{transform:translateX(0);}
+.mobile-nav-links{list-style:none;display:flex;flex-direction:column;gap:2px;margin-bottom:28px;}
+.mobile-nav-links a{display:block;padding:15px 4px;font-size:17px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);}
+body.nav-open{overflow:hidden;}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:980px;font-weight:600;font-size:15px;cursor:pointer;border:none;position:relative;isolation:isolate;overflow:hidden;transition:transform var(--dur-fast) var(--ease-out), box-shadow var(--dur) var(--ease-out), background var(--dur-fast) ease;letter-spacing:-0.01em;white-space:nowrap;}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 55%);opacity:.9;pointer-events:none;}
+.btn-coral{background:linear-gradient(180deg, #f98d93, var(--coral));color:#fff;box-shadow:var(--shadow-coral);}
+.btn-coral:hover{box-shadow:0 20px 36px -10px rgba(246,104,113,0.6);}
 .btn-coral:active{transform:scale(0.97) !important;}
 .btn-small{padding:10px 22px;font-size:14px;}
-.btn-outline{background:rgba(45,52,97,0.055);color:var(--navy);border:1px solid rgba(45,52,97,0.16);}
-.btn-outline:hover{background:rgba(45,52,97,0.09);}
+.btn-outline{background:rgba(49,55,87,0.055);color:var(--navy);border:1px solid rgba(49,55,87,0.16);}
+.btn-outline:hover{background:rgba(49,55,87,0.09);}
 .btn-outline:active{transform:scale(0.97) !important;}
 .btn-full{width:100%;text-align:center;}
 
-/* Hero */
-.hero{
-padding:132px 0 108px;
-text-align:center;
-position:relative;
-overflow:hidden;
-}
+.hero{padding:132px 0 100px;text-align:center;position:relative;overflow:hidden;}
 .orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0;will-change:transform;}
-.orb-1{width:520px;height:520px;top:-220px;left:50%;margin-left:-360px;background:radial-gradient(circle, rgba(240,120,120,0.22), transparent 70%);animation:float1 14s var(--ease-out) infinite alternate;}
-.orb-2{width:440px;height:440px;top:-40px;right:-140px;background:radial-gradient(circle, rgba(45,52,97,0.14), transparent 70%);animation:float2 18s var(--ease-out) infinite alternate;}
+.orb-1{width:520px;height:520px;top:-220px;left:50%;margin-left:-360px;background:radial-gradient(circle, rgba(246,104,113,0.22), transparent 70%);animation:float1 14s var(--ease-out) infinite alternate;}
+.orb-2{width:440px;height:440px;top:-40px;right:-140px;background:radial-gradient(circle, rgba(49,55,87,0.14), transparent 70%);animation:float2 18s var(--ease-out) infinite alternate;}
 @keyframes float1{from{transform:translate(0,0) scale(1);}to{transform:translate(60px,40px) scale(1.08);}}
 @keyframes float2{from{transform:translate(0,0) scale(1);}to{transform:translate(-50px,30px) scale(1.05);}}
 .hero .container{position:relative;z-index:1;}
-.eyebrow{
-display:inline-flex;align-items:center;gap:8px;
-background:var(--surface);
-border:1px solid var(--line);
-color:var(--navy);
-font-weight:600;
-font-size:13px;
-letter-spacing:.01em;
-padding:9px 19px;
-border-radius:980px;
-margin-bottom:30px;
-box-shadow:var(--shadow-xs);
-}
-.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(240,120,120,0.18);animation:pulse 2.4s ease-in-out infinite;}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(240,120,120,0.18);}50%{box-shadow:0 0 0 7px rgba(240,120,120,0.1);}}
-.hero h1{
-font-size:clamp(38px, 6.2vw, 74px);
-max-width:920px;
-margin:0 auto 26px;
-line-height:1.06;
-letter-spacing:-0.035em;
-}
-.hero h1 em{
-font-style:normal;
-background:linear-gradient(120deg, var(--coral), var(--coral-dark));
--webkit-background-clip:text;
-background-clip:text;
-color:transparent;
-}
-.hero p.sub{
-font-size:clamp(17px, 2vw, 22px);
-color:var(--gray);
-max-width:650px;
-margin:0 auto 42px;
-line-height:1.55;
-font-weight:400;
-}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);color:var(--navy);font-weight:600;font-size:13px;letter-spacing:.01em;padding:9px 19px;border-radius:980px;margin-bottom:30px;box-shadow:var(--shadow-xs);}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(246,104,113,0.18);animation:pulse 2.4s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(246,104,113,0.18);}50%{box-shadow:0 0 0 7px rgba(246,104,113,0.1);}}
+.hero h1{font-size:clamp(36px, 5.8vw, 68px);max-width:900px;margin:0 auto 26px;line-height:1.08;letter-spacing:-0.03em;}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg, var(--coral), var(--coral-dark));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero p.sub{font-size:clamp(17px, 2vw, 21px);color:var(--gray);max-width:640px;margin:0 auto 42px;line-height:1.55;font-weight:400;}
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:22px;}
 .hero-note{font-size:13px;color:var(--gray-light);letter-spacing:.01em;}
-.scroll-cue{
-display:inline-flex;margin-top:56px;width:30px;height:46px;border-radius:16px;
-border:1.5px solid var(--line-strong);justify-content:center;padding-top:8px;
-}
-.scroll-cue::before{
-content:"";width:4px;height:8px;border-radius:2px;background:var(--gray-light);
-animation:scrollcue 2s var(--ease-out) infinite;
-}
+.scroll-cue{display:inline-flex;margin-top:56px;width:30px;height:46px;border-radius:16px;border:1.5px solid var(--line-strong);justify-content:center;padding-top:8px;}
+.scroll-cue::before{content:"";width:4px;height:8px;border-radius:2px;background:var(--gray-light);animation:scrollcue 2s var(--ease-out) infinite;}
 @keyframes scrollcue{0%{transform:translateY(0);opacity:1;}70%{opacity:0;}100%{transform:translateY(14px);opacity:0;}}
 
-/* Section base */
 .section{padding:140px 0;}
 .section-tight{padding:88px 0;}
 .section-alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.section-title{
-font-size:clamp(30px, 4.2vw, 44px);
-text-align:center;
-max-width:740px;
-margin:0 auto 18px;
-line-height:1.14;
-letter-spacing:-0.03em;
-}
-.section-sub{
-text-align:center;
-color:var(--gray);
-font-size:18px;
-max-width:600px;
-margin:0 auto 72px;
-line-height:1.55;
-}
+.section-title{font-size:clamp(30px, 4.2vw, 44px);text-align:center;max-width:740px;margin:0 auto 18px;line-height:1.14;letter-spacing:-0.03em;}
+.section-sub{text-align:center;color:var(--gray);font-size:18px;max-width:600px;margin:0 auto 72px;line-height:1.55;}
 
-/* Pain */
-.pain-quote{
-background:linear-gradient(155deg, var(--navy), var(--navy-deep));
-color:#fff;
-border-radius:28px;
-padding:58px;
-text-align:center;
-max-width:740px;
-margin:0 auto 68px;
-box-shadow:var(--shadow-navy);
-position:relative;
-overflow:hidden;
-}
-.pain-quote::before{
-content:"";position:absolute;inset:0;
-background:radial-gradient(circle at 20% 20%, rgba(240,120,120,0.28), transparent 60%);
-}
+.pain-quote{background:linear-gradient(155deg, var(--navy), var(--navy-deep));color:#fff;border-radius:28px;padding:58px;text-align:center;max-width:740px;margin:0 auto 68px;box-shadow:var(--shadow-navy);position:relative;overflow:hidden;}
+.pain-quote::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%, rgba(246,104,113,0.28), transparent 60%);}
 .pain-quote p{font-size:clamp(19px,2.6vw,27px);font-weight:600;line-height:1.4;position:relative;letter-spacing:-0.015em;}
-.pain-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:18px;
-}
-.pain-item{
-position:relative;
-border-radius:20px;
-overflow:hidden;
-min-height:230px;
-display:flex;
-align-items:flex-end;
-box-shadow:var(--shadow-sm);
-background-size:cover;
-background-position:center;
-transition:transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
-}
-.pain-item::before{
-content:"";position:absolute;inset:0;
-background:linear-gradient(180deg, rgba(15,18,38,0.08) 0%, rgba(15,18,38,0.6) 55%, rgba(15,18,38,0.92) 100%);
-}
-.pain-item span.txt{
-position:relative;z-index:1;
-color:#fff;
-font-size:15px;
-line-height:1.5;
-font-weight:500;
-padding:24px;
-}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+.pain-item{position:relative;border-radius:20px;overflow:hidden;min-height:230px;display:flex;align-items:flex-end;box-shadow:var(--shadow-sm);background-size:cover;background-position:center;transition:transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);}
+.pain-item::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(15,18,38,0.08) 0%, rgba(15,18,38,0.6) 55%, rgba(15,18,38,0.92) 100%);}
+.pain-item span.txt{position:relative;z-index:1;color:#fff;font-size:15px;line-height:1.5;font-weight:500;padding:24px;}
 .pain-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
 
-/* Transformation (before/after) */
-.transform-grid{
-display:grid;grid-template-columns:1fr auto 1fr;gap:28px;align-items:center;max-width:920px;margin:0 auto;
-}
+.transform-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:28px;align-items:center;max-width:920px;margin:0 auto;}
 .transform-arrow{font-size:30px;color:var(--coral);font-weight:700;}
-.transform-card{
-position:relative;border-radius:24px;overflow:hidden;
-box-shadow:var(--shadow-md);background:var(--surface);
-border:1px solid var(--line);
-transition:transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
-}
+.transform-card{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md);background:var(--surface);border:1px solid var(--line);transition:transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);}
 .transform-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
 .transform-img{aspect-ratio:4/3;overflow:hidden;}
 .transform-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--ease-out);}
 .transform-card:hover .transform-img img{transform:scale(1.06);}
-.transform-label{
-position:absolute;top:16px;left:16px;padding:7px 17px;border-radius:980px;
-font-size:12px;font-weight:700;letter-spacing:.03em;color:#fff;text-transform:uppercase;
-box-shadow:0 6px 14px -4px rgba(0,0,0,0.3);
-}
-.transform-label-before{background:rgba(45,52,97,0.88);}
+.transform-label{position:absolute;top:16px;left:16px;padding:7px 17px;border-radius:980px;font-size:12px;font-weight:700;letter-spacing:.03em;color:#fff;text-transform:uppercase;box-shadow:0 6px 14px -4px rgba(0,0,0,0.3);}
+.transform-label-before{background:rgba(49,55,87,0.88);}
 .transform-label-after{background:var(--coral);}
 .transform-card p{padding:18px 22px;font-size:14px;color:var(--gray);line-height:1.55;}
-@media (max-width:720px){
-.transform-grid{grid-template-columns:1fr;}
-.transform-arrow{transform:rotate(90deg);margin:0 auto;}
-}
+@media (max-width:720px){.transform-grid{grid-template-columns:1fr;}.transform-arrow{transform:rotate(90deg);margin:0 auto;}}
 
-/* Session photo banner */
-.session-photo{
-max-width:920px;margin:0 auto 56px;border-radius:26px;overflow:hidden;
-box-shadow:var(--shadow-lg);border:1px solid var(--line);
-}
+.session-photo{max-width:920px;margin:0 auto 56px;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--line);}
 .session-photo img{width:100%;display:block;max-height:420px;object-fit:cover;}
 
-/* Founder */
-.founder-box{
-display:grid;grid-template-columns:270px 1fr;gap:60px;align-items:center;
-}
+.founder-box{display:grid;grid-template-columns:270px 1fr;gap:60px;align-items:center;}
 .founder-photo-wrap{position:relative;width:250px;height:250px;margin:0 auto;}
-.founder-photo{
-width:100%;height:100%;border-radius:50%;overflow:hidden;
-box-shadow:var(--shadow-lg);
-border:6px solid var(--surface);
-background:linear-gradient(145deg, var(--navy), var(--navy-soft));
-position:relative;
-}
+.founder-photo{width:100%;height:100%;border-radius:50%;overflow:hidden;box-shadow:var(--shadow-lg);border:6px solid var(--surface);background:linear-gradient(145deg, var(--navy), var(--navy-soft));position:relative;}
 .founder-photo img{width:100%;height:100%;object-fit:cover;display:block;}
-.founder-photo::after{
-content:"S";position:absolute;inset:0;display:none;align-items:center;justify-content:center;
-font-size:80px;font-weight:800;color:#fff;letter-spacing:-0.02em;
-}
-.founder-photo.no-photo::after{display:flex;}
-.founder-photo-ring{
-position:absolute;inset:-11px;border-radius:50%;
-border:2px dashed rgba(240,120,120,0.45);
-animation:spin 50s linear infinite;
-}
+.founder-photo-ring{position:absolute;inset:-11px;border-radius:50%;border:2px dashed rgba(246,104,113,0.45);animation:spin 50s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
-.founder-badge{
-position:absolute;bottom:6px;right:6px;
-width:44px;height:44px;border-radius:50%;
-background:var(--coral);
-display:flex;align-items:center;justify-content:center;
-font-size:20px;
-box-shadow:0 8px 18px -4px rgba(240,120,120,0.6);
-border:3px solid var(--surface);
-}
-.founder-text .tag{
-display:inline-block;background:rgba(45,52,97,0.08);color:var(--navy);
-font-size:12px;font-weight:600;padding:8px 17px;border-radius:980px;margin-bottom:20px;
-letter-spacing:.02em;
-}
+.founder-badge{position:absolute;bottom:6px;right:6px;width:44px;height:44px;border-radius:50%;background:var(--coral);display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 8px 18px -4px rgba(246,104,113,0.6);border:3px solid var(--surface);}
+.founder-text .tag{display:inline-block;background:rgba(49,55,87,0.08);color:var(--navy);font-size:12px;font-weight:600;padding:8px 17px;border-radius:980px;margin-bottom:20px;letter-spacing:.02em;}
 .founder-text h2{font-size:clamp(26px,3.2vw,36px);margin-bottom:20px;letter-spacing:-0.03em;line-height:1.15;}
 .founder-text p{color:var(--gray);font-size:16px;line-height:1.65;margin-bottom:14px;}
 .founder-text p:last-of-type{margin-bottom:0;}
 .founder-sign{margin-top:20px;font-family:Georgia, 'Times New Roman', serif;font-style:italic;font-size:20px;color:var(--navy);}
+@media (max-width:720px){.founder-box{grid-template-columns:1fr;text-align:center;gap:32px;}}
 
-@media (max-width:720px){
-.founder-box{grid-template-columns:1fr;text-align:center;gap:32px;}
-}
-
-/* Included */
-.included-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:22px;
-}
-.included-card{
-background:var(--surface);
-border-radius:22px;
-padding:34px;
-border:1px solid var(--line);
-overflow:hidden;
-transition:transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
-}
-.included-card:hover{transform:translateY(-8px) rotateX(2deg);box-shadow:0 30px 56px -22px rgba(45,52,97,0.24), 0 0 0 .5px rgba(0,0,0,.05);}
-.included-card .icon{
-width:46px;height:46px;border-radius:14px;
-background:linear-gradient(145deg, var(--coral), var(--coral-dark));
-display:flex;align-items:center;justify-content:center;
-font-size:20px;margin-bottom:20px;
-box-shadow:0 10px 20px -6px rgba(240,120,120,0.45), inset 0 1px 0 rgba(255,255,255,0.25);
-transition:transform var(--dur) var(--ease-spring);
-}
+.included-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
+.included-card{background:var(--surface);border-radius:22px;padding:34px;border:1px solid var(--line);overflow:hidden;transition:transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);}
+.included-card:hover{transform:translateY(-8px) rotateX(2deg);box-shadow:0 30px 56px -22px rgba(49,55,87,0.24), 0 0 0 .5px rgba(0,0,0,.05);}
+.included-card .icon{width:46px;height:46px;border-radius:14px;background:linear-gradient(145deg, var(--coral), var(--coral-dark));display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:20px;box-shadow:0 10px 20px -6px rgba(246,104,113,0.45), inset 0 1px 0 rgba(255,255,255,0.25);transition:transform var(--dur) var(--ease-spring);}
 .included-card:hover .icon{transform:scale(1.08) rotate(-4deg);}
 .included-card h3{font-size:18.5px;margin-bottom:11px;letter-spacing:-0.015em;}
 .included-card p{color:var(--gray);font-size:14.5px;line-height:1.6;}
 
-/* Timeline */
-.timeline{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:22px;
-position:relative;
-}
-.tl-card{
-background:var(--surface);
-border:1px solid var(--line);
-border-radius:22px;
-padding:32px;
-position:relative;
-overflow:hidden;
-transition:transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
-}
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;position:relative;}
+.tl-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:32px;position:relative;overflow:hidden;transition:transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);}
 .tl-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);}
-.tl-num{
-width:38px;height:38px;
-background:linear-gradient(145deg, var(--navy), var(--navy-soft));
-color:#fff;
-border-radius:12px;
-display:flex;align-items:center;justify-content:center;
-font-weight:700;font-size:15px;
-margin-bottom:22px;
-box-shadow:0 8px 16px -5px rgba(45,52,97,0.5), inset 0 1px 0 rgba(255,255,255,0.16);
-}
+.tl-num{width:38px;height:38px;background:linear-gradient(145deg, var(--navy), var(--navy-soft));color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;margin-bottom:22px;box-shadow:0 8px 16px -5px rgba(49,55,87,0.5), inset 0 1px 0 rgba(255,255,255,0.16);}
 .tl-card h3{font-size:17.5px;margin-bottom:16px;letter-spacing:-0.015em;}
 .tl-card ul{list-style:none;}
-.tl-card li{
-color:var(--gray);font-size:14px;
-margin-bottom:9px;padding-left:19px;position:relative;line-height:1.5;
-}
-.tl-card li::before{
-content:"";position:absolute;left:0;top:7px;
-width:5px;height:5px;border-radius:50%;background:var(--coral);
-}
+.tl-card li{color:var(--gray);font-size:14px;margin-bottom:9px;padding-left:19px;position:relative;line-height:1.5;}
+.tl-card li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--coral);}
 .tl-note{font-size:12.5px;color:var(--gray-light);margin:-10px 0 16px;font-style:italic;}
-.tl-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.tl-split-col span.path-label{display:block;font-size:11.5px;font-weight:700;color:var(--coral);text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;}
-.tl-split-col ul{list-style:none;}
-.tl-split-col li{color:var(--gray);font-size:13px;margin-bottom:7px;padding-left:15px;position:relative;line-height:1.4;}
-.tl-split-col li::before{content:"";position:absolute;left:0;top:6px;width:4px;height:4px;border-radius:50%;background:var(--coral);}
-@media (max-width:520px){.tl-split{grid-template-columns:1fr;gap:14px;}}
 
-/* Avatar */
-.avatar-box{
-background:linear-gradient(155deg, var(--navy), var(--navy-deep));
-border-radius:32px;
-padding:68px;
-color:#fff;
-display:grid;
-grid-template-columns:1.1fr 0.9fr;
-gap:60px;
-align-items:center;
-box-shadow:0 50px 100px -34px rgba(45,52,97,0.55);
-position:relative;
-overflow:hidden;
-}
-.avatar-box::before{
-content:"";position:absolute;inset:0;
-background:radial-gradient(circle at 90% 10%, rgba(240,120,120,0.22), transparent 55%);
-}
+.avatar-box{background:linear-gradient(155deg, var(--navy), var(--navy-deep));border-radius:32px;padding:68px;color:#fff;display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;box-shadow:0 50px 100px -34px rgba(49,55,87,0.55);position:relative;overflow:hidden;}
+.avatar-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 10%, rgba(246,104,113,0.22), transparent 55%);}
 .avatar-box > div, .avatar-box > ul{position:relative;}
 .avatar-box h2{color:#fff;font-size:clamp(24px,3vw,33px);margin-bottom:20px;line-height:1.2;letter-spacing:-0.025em;}
 .avatar-box p{color:rgba(255,255,255,0.72);font-size:15.5px;margin-bottom:15px;line-height:1.6;}
-.avatar-box .tag{
-display:inline-block;background:rgba(240,120,120,0.9);color:#fff;
-font-size:12px;font-weight:600;padding:8px 17px;border-radius:980px;margin-bottom:22px;
-letter-spacing:.02em;
-}
+.avatar-box .tag{display:inline-block;background:rgba(246,104,113,0.9);color:#fff;font-size:12px;font-weight:600;padding:8px 17px;border-radius:980px;margin-bottom:22px;letter-spacing:.02em;}
 .avatar-list{list-style:none;}
-.avatar-list li{
-background:rgba(255,255,255,0.07);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.09);
-border-radius:16px;
-padding:17px 21px;
-margin-bottom:12px;
-font-size:15px;
-color:#fff;
-font-style:italic;
-transition:background var(--dur) ease, transform var(--dur) var(--ease-out);
-}
+.avatar-list li{background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.09);border-radius:16px;padding:17px 21px;margin-bottom:12px;font-size:15px;color:#fff;font-style:italic;transition:background var(--dur) ease, transform var(--dur) var(--ease-out);}
 .avatar-list li:hover{background:rgba(255,255,255,0.11);transform:translateX(4px);}
+@media (max-width:720px){.avatar-box{grid-template-columns:1fr;padding:38px 28px;}}
 
-/* Pricing */
-.pricing-wrap{display:flex;justify-content:center;}
-.price-card{
-background:var(--surface);
-border-radius:32px;
-padding:56px;
-max-width:470px;
-width:100%;
-text-align:center;
-box-shadow:var(--shadow-lg);
-position:relative;
-isolation:isolate;
-transition:transform var(--dur) var(--ease-out);
-}
-.price-card::before{
-content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;
-background:linear-gradient(160deg, rgba(240,120,120,.55), rgba(45,52,97,.28));
--webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
--webkit-mask-composite:xor;mask-composite:exclude;
-pointer-events:none;
-}
-.price-card::after{
-content:"";position:absolute;inset:20px;border-radius:44px;
-background:radial-gradient(ellipse at 50% 0%, rgba(240,120,120,0.12), transparent 60%);
-z-index:-1;
-}
-.price-shine{
-position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none;z-index:2;
-}
-.price-shine::before{
-content:"";position:absolute;top:-50%;left:-60%;width:40%;height:200%;
-background:linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
-transform:translateX(-100%) rotate(8deg);
-}
-.price-card.is-visible .price-shine::before{
-animation:shine 1.6s var(--ease-out) 400ms 1;
-}
+.pricing-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:940px;margin:0 auto;align-items:start;}
+@media (max-width:760px){.pricing-wrap{grid-template-columns:1fr;}}
+.price-card{background:var(--surface);border-radius:32px;padding:48px 40px;width:100%;text-align:center;box-shadow:var(--shadow-lg);position:relative;isolation:isolate;transition:transform var(--dur) var(--ease-out);}
+.price-card.featured::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(160deg, rgba(246,104,113,.55), rgba(49,55,87,.28));-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+.price-card.featured{transform:scale(1.02);}
+.price-shine{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none;z-index:2;}
+.price-shine::before{content:"";position:absolute;top:-50%;left:-60%;width:40%;height:200%;background:linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);transform:translateX(-100%) rotate(8deg);}
+.price-card.is-visible .price-shine::before{animation:shine 1.6s var(--ease-out) 400ms 1;}
 @keyframes shine{to{transform:translateX(340%) rotate(8deg);}}
-.price-badge{
-display:inline-flex;align-items:center;gap:6px;
-background:linear-gradient(145deg, var(--coral), var(--coral-dark));color:#fff;
-font-size:12.5px;font-weight:600;letter-spacing:.02em;
-padding:9px 19px;border-radius:980px;
-box-shadow:0 10px 20px -6px rgba(240,120,120,0.5);
-margin-bottom:22px;
-}
-.price-card h3{font-size:22px;margin:0 0 8px;letter-spacing:-0.015em;}
-.price-amount{font-size:62px;font-weight:700;color:var(--ink);margin:18px 0 4px;letter-spacing:-0.035em;}
-.price-amount .price-period{font-size:17px;color:var(--gray);font-weight:500;letter-spacing:normal;}
-.price-list{text-align:left;margin:34px 0;list-style:none;}
-.price-list li{
-padding:14px 0;
-border-bottom:1px solid var(--line);
-font-size:14.5px;
-display:flex;gap:12px;align-items:flex-start;
-color:var(--ink);
-}
+.price-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(145deg, var(--coral), var(--coral-dark));color:#fff;font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:9px 19px;border-radius:980px;box-shadow:0 10px 20px -6px rgba(246,104,113,0.5);margin-bottom:22px;}
+.price-badge.ghost{background:rgba(49,55,87,0.08);color:var(--navy);box-shadow:none;}
+.price-card h3{font-size:20px;margin:0 0 8px;letter-spacing:-0.015em;}
+.price-amount{font-size:52px;font-weight:700;color:var(--ink);margin:14px 0 4px;letter-spacing:-0.035em;}
+.price-amount .price-period{font-size:15px;color:var(--gray);font-weight:500;letter-spacing:normal;}
+.price-amount.price-locked{display:flex;align-items:center;gap:12px;font-size:17px;font-weight:600;color:var(--ink);letter-spacing:normal;margin:18px 0 10px;}
+.price-locked .lock-icon{font-size:28px;line-height:1;}
+.price-locked-text{line-height:1.35;}
+.price-list{text-align:left;margin:28px 0;list-style:none;}
+.price-list li{padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;display:flex;gap:12px;align-items:flex-start;color:var(--ink);}
 .price-list li:last-child{border-bottom:none;}
-.price-list li::before{
-content:"✓";color:#fff;font-weight:700;font-size:11px;
-background:var(--coral);
-width:19px;height:19px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;
-box-shadow:0 3px 8px -2px rgba(240,120,120,0.6);
-}
-.guarantee-line{font-size:12.5px;color:var(--gray-light);margin-top:22px;}
+.price-list li::before{content:"✓";color:#fff;font-weight:700;font-size:11px;background:var(--coral);width:19px;height:19px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;box-shadow:0 3px 8px -2px rgba(246,104,113,0.6);}
+.guarantee-line{font-size:12px;color:var(--gray-light);margin-top:18px;}
+.spots-track{display:flex;gap:5px;margin:16px 0 8px;}
+.spots-track span{flex:1;height:7px;border-radius:5px;background:var(--line-strong);}
+.spots-track span.filled{background:var(--coral);}
+.spots-caption{font-size:12px;color:var(--coral-dark);font-weight:600;}
 
-/* Guarantee */
-.guarantee-box{
-max-width:800px;margin:0 auto;
-background:var(--surface);
-border-radius:28px;
-padding:46px 50px;
-border:1px solid var(--line);
-box-shadow:var(--shadow-sm);
-display:flex;gap:26px;align-items:flex-start;
-}
+.countdown-block{max-width:600px;margin:56px auto 0;text-align:center;}
+.countdown-block .cd-label{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--coral-dark);margin-bottom:18px;}
+.countdown{display:flex;justify-content:center;gap:12px;}
+.cd-item{background:linear-gradient(155deg, var(--navy), var(--navy-deep));color:#fff;border-radius:16px;padding:16px 20px;min-width:74px;box-shadow:var(--shadow-navy);}
+.cd-item .v{font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-0.02em;}
+.cd-item .u{font-size:10px;text-transform:uppercase;letter-spacing:.06em;opacity:.7;margin-top:2px;}
+
+.guarantee-box{max-width:800px;margin:0 auto;background:var(--surface);border-radius:28px;padding:46px 50px;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;gap:26px;align-items:flex-start;}
 .guarantee-box .shield{font-size:37px;flex-shrink:0;}
 .guarantee-box h3{font-size:19.5px;margin-bottom:15px;letter-spacing:-0.015em;}
 .guarantee-box p{color:var(--gray);font-size:14.5px;margin-bottom:11px;line-height:1.6;}
+@media (max-width:720px){.guarantee-box{padding:34px;flex-direction:column;}}
 
-/* FAQ */
 .faq-item{border-bottom:1px solid var(--line);}
-.faq-q{
-width:100%;padding:26px 0;background:none;border:none;text-align:left;
-font:inherit;
-font-size:17px;font-weight:600;letter-spacing:-0.015em;color:var(--ink);
-cursor:pointer;
-display:flex;align-items:center;justify-content:space-between;gap:20px;
-transition:color var(--dur-fast) ease;
-}
+.faq-q{width:100%;padding:26px 0;background:none;border:none;text-align:left;font:inherit;font-size:17px;font-weight:600;letter-spacing:-0.015em;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;transition:color var(--dur-fast) ease;}
 .faq-q:hover{color:var(--navy);}
-.faq-item .chevron{
-flex-shrink:0;width:20px;height:20px;color:var(--gray-light);
-transition:transform var(--dur) var(--ease-out), color var(--dur) ease;
-}
+.faq-item .chevron{flex-shrink:0;width:20px;height:20px;color:var(--gray-light);transition:transform var(--dur) var(--ease-out), color var(--dur) ease;}
 .faq-item.is-open .chevron{transform:rotate(180deg);color:var(--coral);}
 .faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease-out);}
 .faq-item.is-open .faq-a{grid-template-rows:1fr;}
 .faq-a-inner{overflow:hidden;}
 .faq-item p{color:var(--gray);font-size:14.5px;line-height:1.6;padding:0 0 26px;max-width:640px;}
 
-/* Final CTA */
-.final-cta{
-background:linear-gradient(155deg, var(--navy), #10132a);
-color:#fff;
-text-align:center;
-padding:140px 0;
-position:relative;
-overflow:hidden;
-}
-.final-cta::before{
-content:"";position:absolute;inset:0;
-background:radial-gradient(ellipse 50% 50% at 50% 0%, rgba(240,120,120,0.2), transparent);
-}
+.final-cta{background:linear-gradient(155deg, var(--navy), #10132a);color:#fff;text-align:center;padding:140px 0;position:relative;overflow:hidden;}
+.final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 0%, rgba(246,104,113,0.2), transparent);}
 .final-cta .container{position:relative;}
 .final-cta h2{color:#fff;font-size:clamp(28px,4vw,44px);margin-bottom:20px;letter-spacing:-0.03em;}
 .final-cta p{color:rgba(255,255,255,0.65);max-width:520px;margin:0 auto 38px;font-size:17px;line-height:1.55;}
 
-footer{
-background:#0f1226;
-color:rgba(255,255,255,0.4);
-text-align:center;
-padding:44px 0;
-font-size:13px;
-}
+footer{background:#14172c;color:rgba(255,255,255,0.4);text-align:center;padding:44px 0;font-size:13px;}
 footer .logo-text{color:#fff;}
 footer .logo{justify-content:center;margin-bottom:12px;}
 
 @media (max-width:900px){
 .nav-links{display:none;}
+.nav-cta-desktop{display:none;}
+.menu-toggle{display:flex;}
+}
+@media (min-width:901px){
+.mobile-nav, .mobile-nav-backdrop{display:none;}
+}
+@media (min-width:721px) and (max-width:1024px){
+.section{padding:104px 0;}
+.founder-box{grid-template-columns:220px 1fr;gap:40px;}
+.founder-photo-wrap{width:200px;height:200px;}
+.avatar-box{padding:48px 36px;gap:40px;}
+.transform-grid{gap:20px;}
+.pricing-wrap{gap:18px;}
+.price-card{padding:40px 30px;}
+}
+@media (max-width:900px){
+.container{padding:0 24px;}
 }
 @media (max-width:720px){
 .hero{padding:96px 0 68px;}
-.avatar-box{grid-template-columns:1fr;padding:38px 28px;}
 .section{padding:80px 0;}
-.pain-quote,.guarantee-box{padding:34px;}
-.guarantee-box{flex-direction:column;}
-.price-card{padding:38px 30px;}
+.pain-quote{padding:34px;}
+.price-card{padding:38px 28px;}
 .orb{display:none;}
 }
-@media (hover:none){
-.tilt{transform:none !important;}
+@media (max-width:480px){
+.container{padding:0 20px;}
+.countdown{gap:6px;}
+.cd-item{padding:12px 8px;min-width:0;flex:1;}
+.cd-item .v{font-size:19px;}
+.cd-item .u{font-size:8.5px;letter-spacing:.03em;}
+.brand-sub{display:none;}
+.hero h1{padding:0 4px;}
 }
+@media (hover:none){.tilt{transform:none !important;}}
 </style>
 </head>
 <body>
@@ -642,76 +314,110 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="container">
 <div class="logo">
 <svg class="logo-mark" viewBox="0 0 100 100" width="34" height="34" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
-<circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#2D3461" stroke-width="4.5"/>
-<circle cx="50" cy="50" r="38" fill="none" stroke="#2D3461" stroke-width="4.6" stroke-linecap="round" stroke-dasharray="0.1 7.96"/>
-<path d="M50 29 L33 68 L42 68 L50 46 Z M50 29 L67 68 L58 68 L50 46 Z M44 56 L56 56 L58 61 L42 61 Z" fill="#2D3461"/>
-<polygon points="42,71 58,71 50,83" fill="#F07878"/>
+<circle cx="50" cy="50" r="44" fill="#ffffff" stroke="#313757" stroke-width="4.5"/>
+<circle cx="50" cy="50" r="38" fill="none" stroke="#313757" stroke-width="4.6" stroke-linecap="round" stroke-dasharray="0.1 7.96"/>
+<path d="M50 29 L33 68 L42 68 L50 46 Z M50 29 L67 68 L58 68 L50 46 Z M44 56 L56 56 L58 61 L42 61 Z" fill="#313757"/>
+<polygon points="42,71 58,71 50,83" fill="#f66871"/>
 </svg>
-<img class="logo-word" src="logo-primary-2026-07-15.png" alt="Accompagnon">
+<img class="logo-word" src="logo-primary.png" alt="Accompagnon">
+<span class="brand-sub">Le Système Affaires</span>
 </div>
 <ul class="nav-links">
+<li><a href="#piliers">Piliers</a></li>
 <li><a href="#offre">Offre</a></li>
-<li><a href="#sessions">Sessions</a></li>
-<li><a href="#tarif">Tarif</a></li>
+<li><a href="#sessions">Programme</a></li>
 <li><a href="#faq">FAQ</a></li>
 </ul>
-<a href="https://calendly.com/accompagnon" class="btn btn-coral btn-small magnetic" target="_blank" rel="noopener">Réserver mon appel</a>
+<a href="https://calendly.com/accompagnon/diagnostic-business-30-min-gratuit" class="btn btn-coral btn-small magnetic nav-cta-desktop" target="_blank" rel="noopener">Réserver mon Diagnostic</a>
+<button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+<span></span><span></span><span></span>
+</button>
 </div>
 </header>
+<div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+<div class="mobile-nav" id="mobileNav">
+<ul class="mobile-nav-links">
+<li><a href="#piliers">Piliers</a></li>
+<li><a href="#offre">Offre</a></li>
+<li><a href="#sessions">Programme</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+<a href="https://calendly.com/accompagnon/diagnostic-business-30-min-gratuit" class="btn btn-coral btn-full magnetic" target="_blank" rel="noopener">Réserver mon Diagnostic</a>
+</div>
 
 <section class="hero">
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 <div class="container">
-<span class="eyebrow load-in"><span class="dot"></span>Coaching 1-on-1 · Francophone · 4 semaines</span>
-<h1 class="load-in">Passe du <em>chaos</em> à la clarté sans sacrifier ta famille ni ta santé mentale.</h1>
-<p class="sub load-in">Le Système Clair aide les francophones débordés, entrepreneurs ou salariés, à organiser leur travail ET leur vie en 4 semaines. Un système concret, pas une autre formation théorique.</p>
+<span class="eyebrow load-in"><span class="dot"></span>Accompagnement individuel · 3 mois · Démarrage dès l'inscription</span>
+<h1 class="load-in">Avance avec un <em>plan clair</em>, au lieu de courir après le feu.</h1>
+<p class="sub load-in">J'aide les entrepreneurs solos et les travailleurs autonomes à structurer leur business ET leur tête — pour qu'ils avancent avec un plan clair au lieu de courir après le feu.</p>
 <div class="hero-cta load-in">
-<a href="https://calendly.com/accompagnon" class="btn btn-coral magnetic" target="_blank" rel="noopener">Réserver mon appel diagnostic gratuit</a>
-<a href="#offre" class="btn btn-outline magnetic">Voir l'offre — 497$</a>
+<a href="https://calendly.com/accompagnon/diagnostic-business-30-min-gratuit" class="btn btn-coral magnetic" target="_blank" rel="noopener">Réserver mon Diagnostic Business — 30 min</a>
+<a href="#piliers" class="btn btn-outline magnetic">Voir les 3 piliers</a>
 </div>
-<p class="hero-note load-in">30 minutes, sans engagement · Places limitées chaque mois</p>
-<div class="load-in" style="display:flex;justify-content:center;">
-<span class="scroll-cue" aria-hidden="true"></span>
-</div>
+<p class="hero-note load-in">30 minutes, sans engagement</p>
+<div class="load-in" style="display:flex;justify-content:center;"><span class="scroll-cue" aria-hidden="true"></span></div>
 </div>
 </section>
 
 <section class="section section-alt">
 <div class="container">
 <h2 class="section-title reveal">Tu reconnais cette réalité ?</h2>
-<p class="section-sub reveal">Tu n'es pas paresseux. Tu es débordé intelligemment et tu as besoin d'un système, pas d'une autre dose de motivation.</p>
+<p class="section-sub reveal">T'es pas un mauvais entrepreneur. T'es débordé intelligemment et t'as besoin d'un système, pas d'une autre app de productivité.</p>
 
-<div class="pain-quote reveal">
-<p>"Je travaille fort, mais je n'avance pas aussi vite que je devrais. Je m'épuise dans le processus."</p>
-</div>
+<div class="pain-quote reveal"><p>"Je porte tout moi-même — sans systèmes qui tiennent, mon business pourrait s'effondrer si j'arrêtais une semaine."</p></div>
 
 <div class="pain-grid reveal-stagger">
-<div class="pain-item reveal spotlight" style="--i:0;background-image:url('https://images.pexels.com/photos/6539020/pexels-photo-6539020.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Trop d'idées, trop de projets en même temps. Rien ne se termine vraiment.</span></div>
-<div class="pain-item reveal spotlight" style="--i:1;background-image:url('https://images.pexels.com/photos/36950612/pexels-photo-36950612.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Des listes infinies, mais peu d'avancement réel semaine après semaine.</span></div>
-<div class="pain-item reveal spotlight" style="--i:2;background-image:url('https://images.pexels.com/photos/7984773/pexels-photo-7984773.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Tu te sens coupable de ne jamais "en faire assez", même en travaillant sans arrêt.</span></div>
-<div class="pain-item reveal spotlight" style="--i:3;background-image:url('https://images.pexels.com/photos/17511838/pexels-photo-17511838.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Ton couple ou ta famille écope parce que le travail prend toute la place.</span></div>
-<div class="pain-item reveal spotlight" style="--i:4;background-image:url('https://images.pexels.com/photos/5399024/pexels-photo-5399024.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Tu consommes des podcasts, formations et vidéos sans jamais vraiment appliquer.</span></div>
-<div class="pain-item reveal spotlight" style="--i:5;background-image:url('https://images.pexels.com/photos/7111490/pexels-photo-7111490.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Zéro marge de manoeuvre, un imprévu et tout déraille.</span></div>
+<div class="pain-item reveal spotlight" style="--i:0;background-image:url('https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Le réveil sonne, pis c'est déjà le sprint : courriels, clients, urgences, zéro structure pour la journée.</span></div>
+<div class="pain-item reveal spotlight" style="--i:1;background-image:url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Tu finis ta journée vidé, pis y'a plus rien pour avancer ton propre projet.</span></div>
+<div class="pain-item reveal spotlight" style="--i:2;background-image:url('https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">La charge mentale pèse sur toi seul — rien n'est écrit nulle part, tout est dans ta tête.</span></div>
+<div class="pain-item reveal spotlight" style="--i:3;background-image:url('https://images.pexels.com/photos/5717884/pexels-photo-5717884.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Le travail suit jusqu'au soir : le téléphone qui vibre, les messages clients qui n'arrêtent jamais.</span></div>
+<div class="pain-item reveal spotlight" style="--i:4;background-image:url('https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">T'as déjà essayé des apps pis des to-do lists, mais rien tient plus qu'une semaine.</span></div>
+<div class="pain-item reveal spotlight" style="--i:5;background-image:url('https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Un imprévu — un client qui lâche, une urgence perso — pis toute la semaine déraille.</span></div>
 </div>
 </div>
 </section>
 
 <section class="section">
 <div class="container">
-<h2 class="section-title reveal">Du chaos à la clarté, concrètement</h2>
-<p class="section-sub reveal">Pas une promesse abstraite. Un vrai changement dans ta réalité quotidienne.</p>
+<h2 class="section-title reveal">D'un business qui repose sur toi à un business qui roule avec toi</h2>
+<p class="section-sub reveal">Pas une promesse abstraite. Un vrai changement dans ta réalité d'entrepreneur.</p>
 <div class="transform-grid reveal-stagger">
 <div class="transform-card reveal" style="--i:0">
-<div class="transform-img"><img src="https://images.pexels.com/photos/7792752/pexels-photo-7792752.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Professionnel débordé et épuisé devant son ordinateur" loading="lazy"></div>
+<div class="transform-img"><img src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Entrepreneur débordé au bureau" loading="lazy"></div>
 <span class="transform-label transform-label-before">Avant</span>
-<p>Chaos mental, deadlines qui s'accumulent, aucune vue d'ensemble sur le travail ni la vie perso.</p>
+<p>Journées chaotiques, tout repose sur toi, zéro système qui survit sans intervention constante.</p>
 </div>
 <div class="transform-arrow reveal" style="--i:1">→</div>
 <div class="transform-card reveal" style="--i:2">
-<div class="transform-img"><img src="https://images.pexels.com/photos/33136468/pexels-photo-33136468.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bureau organisé avec planificateur hebdomadaire" loading="lazy"></div>
+<div class="transform-img"><img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Entrepreneur organisé et serein" loading="lazy"></div>
 <span class="transform-label transform-label-after">Après</span>
-<p>Système clair, priorités définies, l'esprit tranquille et du temps pour ce qui compte vraiment.</p>
+<p>Des systèmes qui tiennent, du temps protégé pour avancer, un business qui roule même quand t'es pas dessus 24/7.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section section-alt" id="piliers">
+<div class="container">
+<h2 class="section-title reveal">Les 3 piliers du Système Affaires</h2>
+<p class="section-sub reveal">On travaille le business et la tête en même temps. Un sans l'autre, ça tient pas.</p>
+<div class="included-grid reveal-stagger">
+<div class="included-card reveal spotlight tilt" style="--i:0">
+<div class="icon">🗂️</div>
+<h3>1. Structure &amp; Systèmes</h3>
+<p>Tes processus, tes outils pis l'organisation de ton travail. On sort ce qui est dans ta tête pour le mettre dans un système qui roule sans que tu le portes à bout de bras.</p>
+</div>
+<div class="included-card reveal spotlight tilt" style="--i:1">
+<div class="icon">🧠</div>
+<h3>2. Charge mentale &amp; Stress</h3>
+<p>Gérer la pression, les imprévus pis les semaines chargées sans t'épuiser. Des repères concrets pour décrocher le soir et garder ton énergie sur la durée.</p>
+</div>
+<div class="included-card reveal spotlight tilt" style="--i:2">
+<div class="icon">✍️</div>
+<h3>3. Lancement &amp; Contenu</h3>
+<p>Sortir ton offre pis ton contenu du brouillon. Un plan simple et réaliste pour publier, lancer et avancer, même avec un horaire déjà plein.</p>
 </div>
 </div>
 </div>
@@ -722,16 +428,14 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="founder-box reveal">
 <div class="founder-photo-wrap">
 <div class="founder-photo-ring"></div>
-<div class="founder-photo">
-<img src="seby.jpg" alt="Sébastien, fondateur d'Accompagnon" onerror="this.style.display='none';this.parentElement.classList.add('no-photo');">
-</div>
+<div class="founder-photo"><img src="seby.jpg" alt="Sébastien, fondateur d'Accompagnon"></div>
 <div class="founder-badge">👋</div>
 </div>
 <div class="founder-text">
 <span class="tag">Ton coach</span>
 <h2>Salut, moi c'est Sébastien.</h2>
-<p>Il y a quelques années, j'étais exactement à ta place : un business qui roulait, mais un chaos total dans ma tête et dans ma vie de famille. J'ai construit le Système Clair parce que j'avais besoin de ce système-là moi-même, avant de l'offrir à qui que ce soit d'autre.</p>
-<p>Aujourd'hui, j'accompagne des francophones débordés, entrepreneurs ou salariés, à travers exactement ce que j'ai vécu. Pas de théorie, juste ce qui fonctionne vraiment dans la vraie vie.</p>
+<p>Je suis entrepreneur moi aussi. J'ai bâti plusieurs projets, géré ma propre charge mentale, pis j'ai fini par comprendre que le vrai luxe, c'est pas plus d'heures, c'est des systèmes qui tiennent sans toi.</p>
+<p>Le Système Affaires, c'est le programme que j'aurais aimé avoir : pas de théorie, juste ce qui fonctionne vraiment pour structurer un business solo.</p>
 <p class="founder-sign">— Sébastien, fondateur d'Accompagnon</p>
 </div>
 </div>
@@ -740,44 +444,28 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 
 <section class="section section-alt" id="offre">
 <div class="container">
-<h2 class="section-title reveal">Ce qui est inclus dans Le Système Clair</h2>
-<p class="section-sub reveal">Tout ce dont tu as besoin pour construire un système qui continue de fonctionner après le programme.</p>
-
+<h2 class="section-title reveal">Ce qui est inclus dans Le Système Affaires</h2>
+<p class="section-sub reveal">Tout ce dont tu as besoin pour que le changement tienne bien après la fin du programme.</p>
 <div class="included-grid reveal-stagger">
 <div class="included-card reveal spotlight tilt" style="--i:0">
 <div class="icon">🗓️</div>
-<h3>4 sessions Zoom 1-on-1</h3>
-<p>60 minutes par semaine pendant 4 semaines, entièrement adaptées à ta réalité.</p>
+<h3>Suivi individuel 1-on-1</h3>
+<p>Kickoff 60 min + un appel 45 min aux 2 semaines, entièrement adapté à ton business. Tu commences dès ton inscription, pas de cohorte à attendre.</p>
 </div>
 <div class="included-card reveal spotlight tilt" style="--i:1">
-<div class="icon">🏛️</div>
-<h3>Accès au Vault Accompagnon</h3>
-<p>Bibliothèque complète de templates et systèmes de productivité, travail et famille prêts à l'emploi.</p>
+<div class="icon">🎥</div>
+<h3>Formation vidéo complète</h3>
+<p>Des modules courts (10-20 min), à ton rythme, organisés selon les 3 piliers du programme.</p>
 </div>
 <div class="included-card reveal spotlight tilt" style="--i:2">
-<div class="icon">💬</div>
-<h3>Support entre les sessions</h3>
-<p>Un accompagnement continu par messages, pas juste 4 heures de coaching isolées.</p>
+<div class="icon">📄</div>
+<h3>Guides & templates prêts à l'emploi</h3>
+<p>Diagnostic Business, tableaux de bord Notion/Miro, plan de contenu, tracker d'heures récupérées.</p>
 </div>
 <div class="included-card reveal spotlight tilt" style="--i:3">
-<div class="icon">📈</div>
-<h3>Plan d'action personnalisé 90 jours</h3>
-<p>Tu repars avec une feuille de route claire, pas juste des notes de séance.</p>
-</div>
-<div class="included-card reveal spotlight tilt" style="--i:4">
-<div class="icon">📄</div>
-<h3>Templates et guides</h3>
-<p>Des outils prêts à l'emploi pour appliquer le système sans repartir de zéro.</p>
-</div>
-<div class="included-card reveal spotlight tilt" style="--i:5">
-<div class="icon">📚</div>
-<h3>Liste de ressources</h3>
-<p>Une sélection d'outils et de références triés sur le volet pour continuer à progresser.</p>
-</div>
-<div class="included-card reveal spotlight tilt" style="--i:6">
-<div class="icon">🤖</div>
-<h3>1 mois d'Accompagnon.Ai Ultimate</h3>
-<p>Accès offert d'un mois au plan Ultimate d'Accompagnon.Ai, l'app de productivité propulsée par l'IA.</p>
+<div class="icon">💬</div>
+<h3>Communauté privée d'entrepreneurs</h3>
+<p>Un espace pour échanger avec d'autres entrepreneurs solos qui vivent exactement la même chose que toi.</p>
 </div>
 </div>
 </div>
@@ -785,66 +473,42 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 
 <section class="section" id="sessions">
 <div class="container">
-<h2 class="section-title reveal">La structure du Système Clair</h2>
-<p class="section-sub reveal">Deux chantiers en parallèle dès le jour 1 : ta fondation personnelle et ton système de travail. Le programme s'adapte à ton profil, entrepreneur ou 9-à-5.</p>
+<h2 class="section-title reveal">3 mois, 3 phases</h2>
+<p class="section-sub reveal">Un accompagnement individuel qui démarre dès ton inscription. Chaque phase met l'accent sur un pilier, à ton rythme.</p>
 
 <div class="session-photo reveal">
-<img src="https://images.pexels.com/photos/4226122/pexels-photo-4226122.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Session de coaching en visioconférence" loading="lazy">
+<img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Appel de coaching business en visioconférence" loading="lazy">
 </div>
 
 <div class="timeline reveal-stagger">
 <div class="tl-card reveal spotlight" style="--i:0">
 <div class="tl-num">1</div>
-<h3>Diagnostic + premières victoires</h3>
-<p class="tl-note">Semaine 1</p>
+<h3>Reprendre le contrôle</h3>
+<p class="tl-note">Mois 1</p>
 <ul>
-<li>Portrait complet : vie perso, travail, habitudes, frictions</li>
-<li>Identification de ton profil, entrepreneur, 9-à-5 ou hybride</li>
-<li>2 à 3 quick wins installés tout de suite, côté perso et côté travail</li>
+<li>Le Diagnostic Business : où sont les 3 zones de chaos prioritaires</li>
+<li>Structure &amp; Systèmes : processus, outils, organisation du travail</li>
+<li>Les premières heures récupérées et protégées à l'agenda</li>
 </ul>
 </div>
 <div class="tl-card reveal spotlight" style="--i:1">
 <div class="tl-num">2</div>
-<h3>Fondation personnelle</h3>
-<p class="tl-note">Semaine 2 · tronc commun</p>
+<h3>Alléger la tête</h3>
+<p class="tl-note">Mois 2</p>
 <ul>
-<li>Système d'organisation personnel : tâches, agenda, revue hebdomadaire</li>
-<li>Habitudes clés : sommeil, énergie, environnement, distractions</li>
-<li>Ajustement des quick wins de la semaine 1</li>
-<li>L'app Accompagnon devient ton outil central</li>
+<li>Charge mentale &amp; Stress : gérer la pression et les imprévus sans s'épuiser</li>
+<li>Des routines pour décrocher pis protéger ton énergie</li>
+<li>Les nouveaux systèmes deviennent des réflexes</li>
 </ul>
 </div>
 <div class="tl-card reveal spotlight" style="--i:2">
 <div class="tl-num">3</div>
-<h3>Systèmes de travail</h3>
-<p class="tl-note">Semaine 3 · adapté à ton profil</p>
-<div class="tl-split">
-<div class="tl-split-col">
-<span class="path-label">Parcours entrepreneur</span>
+<h3>Sortir du brouillon</h3>
+<p class="tl-note">Mois 3</p>
 <ul>
-<li>Acquisition et livraison</li>
-<li>Admin et finances</li>
-<li>Automatisations et délégation</li>
-</ul>
-</div>
-<div class="tl-split-col">
-<span class="path-label">Parcours 9-à-5</span>
-<ul>
-<li>Priorités et limites au travail</li>
-<li>Finances personnelles et projets perso</li>
-<li>Système de revue durable</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="tl-card reveal spotlight" style="--i:3">
-<div class="tl-num">4</div>
-<h3>Bilan + Plan 90 jours</h3>
-<p class="tl-note">Semaine 4</p>
-<ul>
-<li>Revue de ce qui a été installé</li>
-<li>Plan 90 jours personnalisé avec jalons</li>
-<li>Protocole d'autonomie : quoi faire quand ça déraille</li>
+<li>Lancement &amp; Contenu : un plan réaliste pour sortir ton offre</li>
+<li>Un rythme de publication que tu peux tenir</li>
+<li>Plan de maintien pour que ça survive à la vraie vie du business</li>
 </ul>
 </div>
 </div>
@@ -856,40 +520,40 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="avatar-box reveal">
 <div>
 <span class="tag">C'est pour toi si…</span>
-<h2>Tu avances, mais tu te sens constamment débordé.</h2>
-<p>Que tu sois entrepreneur ou en emploi 9-à-5, tu es francophone, souvent en couple et parent. Tu avances, mais au prix de ta santé mentale et de ta présence en famille.</p>
-<p>Accompagnon n'est pas du coaching motivation générique. C'est un accompagnement concret, francophone, adapté à ta réalité, pas la méthode "hustle" américaine déconnectée.</p>
+<h2>Tu avances, mais tout repose sur toi.</h2>
+<p>Tu es entrepreneur, solopreneur ou travailleur autonome. Tu avances, mais au prix d'une structure qui tient — et d'une tête qui va bien.</p>
+<p>Le Système Affaires n'est pas du coaching business générique. C'est un accompagnement concret, francophone, pensé pour une vraie réalité de solo — pas une théorie de plus.</p>
 </div>
 <ul class="avatar-list">
-<li>"J'ai trop de choses en tête."</li>
-<li>"Je sais quoi faire, mais je ne le fais pas."</li>
-<li>"Je suis tanné d'être toujours dans le rush."</li>
-<li>"Mon couple souffre de ma charge de travail."</li>
+<li>"Je porte tout moi-même — sans systèmes qui tiennent."</li>
+<li>"Mon business pourrait s'effondrer si j'arrêtais une semaine."</li>
+<li>"J'ai de la misère à sortir mon offre/mon contenu du brouillon pour de vrai."</li>
+<li>"J'ai déjà essayé des outils/apps, mais rien est resté en place."</li>
 </ul>
 </div>
 </div>
 </section>
 
-<section class="section" id="tarif">
+<section class="section" id="demarrer">
 <div class="container">
-<h2 class="section-title reveal">L'investissement</h2>
-<p class="section-sub reveal">Le prix représente moins que ce que ton chaos actuel te coûte déjà en temps, en stress et en conflits.</p>
+<h2 class="section-title reveal">Comment on commence</h2>
+<p class="section-sub reveal">Tout part d'un Diagnostic Business gratuit de 30 minutes. Le tarif se discute seulement en appel privé, une fois qu'on a regardé ta situation ensemble.</p>
 
-<div class="pricing-wrap">
-<div class="price-card reveal tilt">
+<div class="pricing-wrap" style="grid-template-columns:1fr;max-width:480px;">
+<div class="price-card featured reveal tilt">
 <div class="price-shine"></div>
-<span class="price-badge">⭐ Système Clair</span>
-<h3>4 semaines pour retrouver ta clarté</h3>
-<div class="price-amount"><span class="count-up" data-target="497">0</span>$ <span class="price-period">/ programme complet</span></div>
+<span class="price-badge">Accompagnement Le Système Affaires</span>
+<h3>3 mois pour structurer ton business et ta tête</h3>
+<div class="price-amount price-locked"><span class="lock-icon">🔒</span><span class="price-locked-text">Tarif discuté<br>en appel privé</span></div>
 <ul class="price-list">
-<li>4 sessions Zoom 1-on-1 (60 min)</li>
-<li>Accès complet au Vault Accompagnon</li>
-<li>Support par messages entre les sessions</li>
-<li>Plan d'action personnalisé 90 jours</li>
-<li>Templates et systèmes clé en main</li>
+<li>Accompagnement individuel sur 3 mois</li>
+<li>Démarrage dès l'inscription — pas de cohorte, pas de date commune</li>
+<li>Les 3 piliers : Structure &amp; Systèmes, Charge mentale &amp; Stress, Lancement &amp; Contenu</li>
+<li>Suivi 1-on-1 + formation + communauté</li>
+<li>Garantie 5h/semaine ou accompagnement prolongé gratuitement</li>
 </ul>
-<a href="https://calendly.com/accompagnon" class="btn btn-coral btn-full magnetic" target="_blank" rel="noopener">Réserver mon appel diagnostic</a>
-<p class="guarantee-line">Appel gratuit de 30 min avant tout engagement · Garantie 7 jours</p>
+<a href="https://calendly.com/accompagnon/diagnostic-business-30-min-gratuit" class="btn btn-coral btn-full magnetic" target="_blank" rel="noopener">Je réserve mon Diagnostic Business gratuit</a>
+<p class="guarantee-line">Appel gratuit de 30 min, sans engagement</p>
 </div>
 </div>
 </div>
@@ -900,9 +564,9 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="guarantee-box reveal">
 <div class="shield">🛡️</div>
 <div>
-<h3>Garantie 7 jours + garantie de résultat</h3>
-<p>7 jours après ta 1ère séance de cadrage → remboursement intégral, sans justification.</p>
-<p>Après ce délai, si tu as fait le travail et que tu n'as pas plus de clarté après 3 semaines, Accompagnon continue de t'accompagner gratuitement jusqu'à ce que ce soit réglé.</p>
+<h3>Garantie 5 heures par semaine</h3>
+<p>Si, après 3 mois, t'as pas récupéré au moins 5 heures par semaine sur tes tâches admin et opérationnelles — en ayant appliqué le système — l'accompagnement est prolongé gratuitement.</p>
+<p>Appliquer le système, concrètement : faire le Diagnostic Business et les plans d'action hebdo des 2 premiers mois.</p>
 </div>
 </div>
 </div>
@@ -913,32 +577,34 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <h2 class="section-title reveal">Questions fréquentes</h2>
 <div style="max-width:720px;margin:0 auto;" class="reveal-stagger">
 <div class="faq-item reveal" style="--i:0">
-<button class="faq-q" aria-expanded="false">
-Est-ce que ça fonctionne si je n'ai jamais réussi à m'organiser ?
-<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-</button>
-<div class="faq-a"><div class="faq-a-inner"><p>Oui, c'est exactement pour ça que le système est construit avec toi sur mesure, plutôt qu'imposé de l'extérieur comme une app ou un template générique.</p></div></div>
+<button class="faq-q" aria-expanded="false">J'ai vraiment pas le temps pour un programme de plus
+<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+<div class="faq-a"><div class="faq-a-inner"><p>C'est exactement le problème qu'on règle. Tu investis 2-3h/semaine pour en récupérer 5 et plus — le retour est immédiat, pas dans un an.</p></div></div>
 </div>
 <div class="faq-item reveal" style="--i:1">
-<button class="faq-q" aria-expanded="false">
-Combien de temps ça prend chaque semaine ?
-<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-</button>
-<div class="faq-a"><div class="faq-a-inner"><p>Une session de 60 minutes par semaine, plus le temps d'appliquer entre les séances. Tu avances à ton rythme avec du support continu.</p></div></div>
+<button class="faq-q" aria-expanded="false">Je suis pas sûr que mon business soit assez structuré pour ça
+<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+<div class="faq-a"><div class="faq-a-inner"><p>C'est justement le point de départ, pas un prérequis. Le Diagnostic Business sert exactement à ça — voir où t'en es et par où commencer.</p></div></div>
 </div>
 <div class="faq-item reveal" style="--i:2">
-<button class="faq-q" aria-expanded="false">
-Qu'est-ce qui se passe après les 4 semaines ?
-<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-</button>
-<div class="faq-a"><div class="faq-a-inner"><p>Tu repars avec un système complet et un plan 90 jours conçu pour continuer à fonctionner sans toi devoir tout réinventer chaque mois.</p></div></div>
+<button class="faq-q" aria-expanded="false">C'est quoi la différence avec une app de productivité ou un template gratuit
+<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+<div class="faq-a"><div class="faq-a-inner"><p>Une app te donne des cases à cocher. Ici t'as un accompagnement humain, un suivi aux 2 semaines et des systèmes pensés pour ta réalité — pas un template générique.</p></div></div>
 </div>
 <div class="faq-item reveal" style="--i:3">
-<button class="faq-q" aria-expanded="false">
-Comment ça commence ?
-<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-</button>
-<div class="faq-a"><div class="faq-a-inner"><p>Un appel diagnostic gratuit de 30 minutes pour voir si c'est le bon fit. Aucun engagement avant ça.</p></div></div>
+<button class="faq-q" aria-expanded="false">Et si ça marche pas pour moi
+<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+<div class="faq-a"><div class="faq-a-inner"><p>La garantie s'applique : si t'as appliqué le système et que t'as pas récupéré au moins 5h/semaine après 3 mois, l'accompagnement est prolongé gratuitement.</p></div></div>
+</div>
+<div class="faq-item reveal" style="--i:4">
+<button class="faq-q" aria-expanded="false">Est-ce que je dois attendre une date de début
+<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+<div class="faq-a"><div class="faq-a-inner"><p>Non. C'est un accompagnement individuel, pas une cohorte : on démarre dès ton inscription.</p></div></div>
+</div>
+<div class="faq-item reveal" style="--i:5">
+<button class="faq-q" aria-expanded="false">Combien ça coûte
+<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+<div class="faq-a"><div class="faq-a-inner"><p>Le tarif se discute en appel privé, après le Diagnostic Business gratuit. On regarde d'abord si l'accompagnement a du sens pour ta situation.</p></div></div>
 </div>
 </div>
 </div>
@@ -946,9 +612,9 @@ Comment ça commence ?
 
 <section class="final-cta">
 <div class="container">
-<h2 class="reveal">Prêt à sortir du chaos ?</h2>
-<p class="reveal">Réserve ton appel diagnostic gratuit de 30 minutes. On regarde ta situation ensemble, sans pression.</p>
-<a href="https://calendly.com/accompagnon" class="btn btn-coral reveal magnetic" target="_blank" rel="noopener">Réserver mon appel maintenant</a>
+<h2 class="reveal">Prêt à structurer ton business et ta tête ?</h2>
+<p class="reveal">Réserve ton Diagnostic Business gratuit de 30 minutes. On regarde ta situation ensemble, sans pression.</p>
+<a href="https://calendly.com/accompagnon/diagnostic-business-30-min-gratuit" class="btn btn-coral reveal magnetic" target="_blank" rel="noopener">Réserver mon Diagnostic Business</a>
 </div>
 </section>
 
@@ -956,37 +622,27 @@ Comment ça commence ?
 <div class="container">
 <div class="logo">
 <svg class="logo-mark" viewBox="0 0 100 100" width="34" height="34" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
-<circle cx="50" cy="50" r="44" fill="#0f1226" stroke="#ffffff" stroke-width="4.5" stroke-opacity="0.9"/>
+<circle cx="50" cy="50" r="44" fill="#14172c" stroke="#ffffff" stroke-width="4.5" stroke-opacity="0.9"/>
 <circle cx="50" cy="50" r="38" fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="4.6" stroke-linecap="round" stroke-dasharray="0.1 7.96"/>
 <path d="M50 29 L33 68 L42 68 L50 46 Z M50 29 L67 68 L58 68 L50 46 Z M44 56 L56 56 L58 61 L42 61 Z" fill="#ffffff"/>
-<polygon points="42,71 58,71 50,83" fill="#F07878"/>
+<polygon points="42,71 58,71 50,83" fill="#f66871"/>
 </svg>
-<div class="logo-text">Accompagnon</div>
+<div class="logo-text">Le Système Affaires · par Accompagnon</div>
 </div>
-<div>Organise ta vie. Libère ton potentiel. · © 2026 Accompagnon</div>
+<div>© 2026 Accompagnon — Le Système Affaires. Photos : Pexels (libres de droits).</div>
 </div>
 </footer>
 
 <script>
-// Scroll-triggered reveal
 const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('is-visible');
-observer.unobserve(entry.target);
-}
-});
+entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
 }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// On-load hero reveal
 requestAnimationFrame(() => {
-document.querySelectorAll('.load-in').forEach((el, i) => {
-setTimeout(() => el.classList.add('is-loaded'), i * 90);
-});
+document.querySelectorAll('.load-in').forEach((el, i) => { setTimeout(() => el.classList.add('is-loaded'), i * 90); });
 });
 
-// Header scroll state + progress bar
 const header = document.querySelector('header');
 const progressBar = document.getElementById('progressBar');
 const onScroll = () => {
@@ -997,7 +653,6 @@ progressBar.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
-// Count-up price
 const countEls = document.querySelectorAll('.count-up');
 const countObserver = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
@@ -1018,7 +673,6 @@ countObserver.unobserve(el);
 }, { threshold: 0.5 });
 countEls.forEach(el => countObserver.observe(el));
 
-// Spotlight cursor-follow
 document.querySelectorAll('.spotlight').forEach(card => {
 card.addEventListener('mousemove', (e) => {
 const r = card.getBoundingClientRect();
@@ -1027,7 +681,6 @@ card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
 });
 });
 
-// Tilt on hover (skip on touch)
 if (window.matchMedia('(hover: hover)').matches) {
 document.querySelectorAll('.tilt').forEach(card => {
 card.addEventListener('mousemove', (e) => {
@@ -1039,7 +692,6 @@ card.style.transform = `translateY(-8px) rotateX(${(-py * 6).toFixed(2)}deg) rot
 card.addEventListener('mouseleave', () => { card.style.transform = ''; });
 });
 
-// Magnetic buttons
 document.querySelectorAll('.magnetic').forEach(btn => {
 btn.addEventListener('mousemove', (e) => {
 const r = btn.getBoundingClientRect();
@@ -1051,7 +703,6 @@ btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
 });
 }
 
-// FAQ accordion
 document.querySelectorAll('.faq-item').forEach(item => {
 const btn = item.querySelector('.faq-q');
 btn.addEventListener('click', () => {
@@ -1059,6 +710,31 @@ const open = item.classList.toggle('is-open');
 btn.setAttribute('aria-expanded', open ? 'true' : 'false');
 });
 });
+
+const menuToggle = document.getElementById('menuToggle');
+const mobileNav = document.getElementById('mobileNav');
+const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+function closeMobileNav() {
+menuToggle.classList.remove('is-open');
+mobileNav.classList.remove('is-open');
+mobileNavBackdrop.classList.remove('is-open');
+menuToggle.setAttribute('aria-expanded', 'false');
+document.body.classList.remove('nav-open');
+}
+function openMobileNav() {
+menuToggle.classList.add('is-open');
+mobileNav.classList.add('is-open');
+mobileNavBackdrop.classList.add('is-open');
+menuToggle.setAttribute('aria-expanded', 'true');
+document.body.classList.add('nav-open');
+}
+menuToggle.addEventListener('click', () => {
+if (mobileNav.classList.contains('is-open')) closeMobileNav(); else openMobileNav();
+});
+mobileNavBackdrop.addEventListener('click', closeMobileNav);
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
+window.addEventListener('resize', () => { if (window.innerWidth > 900) closeMobileNav(); });
+
 </script>
 
 </body>
