@@ -4,18 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Le Système Affaires — Accompagnon</title>
-<meta name="description" content="Le Système Affaires aide les entrepreneurs solos et travailleurs autonomes à structurer leur business ET leur tête en 3 mois — moins de chaos, des systèmes qui tiennent, un plan clair.">
+<meta name="description" content="Entrepreneur solo bloqué ou débordé? On identifie ensemble ce qui ne fonctionne pas, on bâtit un plan clair et on met en place les systèmes — et les changements dans ta vie — qu'il faut pour que t'avances. Accompagnement individuel de 3 mois.">
 <meta name="theme-color" content="#313757">
 <meta property="og:title" content="Le Système Affaires — Accompagnon">
-<meta property="og:description" content="Structure ton business ET ta tête en 3 mois. Moins de chaos, des systèmes qui tiennent, un plan clair au lieu de courir après le feu.">
+<meta property="og:description" content="Bloqué, débordé, ou incapable de lancer ce que tu veux vraiment faire? On identifie ce qui ne fonctionne pas, on bâtit un plan clair, pis on met en place ce qu'il faut pour que t'avances.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://systeme-affaires.accompagnon.com/">
 <meta property="og:site_name" content="Accompagnon">
 <meta property="og:locale" content="fr_CA">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://systeme-affaires.accompagnon.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Le Système Affaires par Accompagnon : tu es bloqué, débordé, ou tu n'arrives pas à lancer ce que tu veux vraiment faire?">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://systeme-affaires.accompagnon.com/">
 <link rel="preconnect" href="https://images.pexels.com">
+<link rel="preload" as="image" href="hero-bg.jpg" media="(min-width: 901px)" fetchpriority="high">
+<link rel="preload" as="image" href="hero-bg-mobile.jpg" media="(max-width: 900px)" fetchpriority="high">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="logo-icone.png">
 <noscript><style>.reveal,.load-in{opacity:1!important;transform:none!important;filter:none!important;}</style></noscript>
@@ -114,7 +120,7 @@ body.nav-open{overflow:hidden;}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:980px;font-weight:600;font-size:15px;cursor:pointer;border:none;position:relative;isolation:isolate;overflow:hidden;transition:transform var(--dur-fast) var(--ease-out), box-shadow var(--dur) var(--ease-out), background var(--dur-fast) ease;letter-spacing:-0.01em;white-space:nowrap;}
 .btn::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 55%);opacity:.9;pointer-events:none;}
-.btn-coral{background:linear-gradient(180deg, #f98d93, var(--coral));color:#fff;box-shadow:var(--shadow-coral);}
+.btn-coral{background:linear-gradient(180deg, #e25561, #d63f4b);color:#fff;box-shadow:var(--shadow-coral);}
 .btn-coral:hover{box-shadow:0 20px 36px -10px rgba(246,104,113,0.6);}
 .btn-coral:active{transform:scale(0.97) !important;}
 .btn-small{padding:10px 22px;font-size:14px;}
@@ -123,23 +129,27 @@ body.nav-open{overflow:hidden;}
 .btn-outline:active{transform:scale(0.97) !important;}
 .btn-full{width:100%;text-align:center;}
 
-.hero{padding:132px 0 100px;text-align:center;position:relative;overflow:hidden;}
-.orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0;will-change:transform;}
-.orb-1{width:520px;height:520px;top:-220px;left:50%;margin-left:-360px;background:radial-gradient(circle, rgba(246,104,113,0.22), transparent 70%);animation:float1 14s var(--ease-out) infinite alternate;}
-.orb-2{width:440px;height:440px;top:-40px;right:-140px;background:radial-gradient(circle, rgba(49,55,87,0.14), transparent 70%);animation:float2 18s var(--ease-out) infinite alternate;}
-@keyframes float1{from{transform:translate(0,0) scale(1);}to{transform:translate(60px,40px) scale(1.08);}}
-@keyframes float2{from{transform:translate(0,0) scale(1);}to{transform:translate(-50px,30px) scale(1.05);}}
+.hero{padding:132px 0 100px;text-align:center;position:relative;overflow:hidden;color:#fff;
+--hero-overlay:linear-gradient(160deg, rgba(43,48,80,0.9) 0%, rgba(43,48,80,0.8) 40%, rgba(43,48,80,0.58) 100%);
+--hero-fallback:linear-gradient(155deg, #2b3050, #1c2038);
+background-color:#2b3050;
+background-image:var(--hero-overlay), url('hero-bg.jpg'), var(--hero-fallback);
+background-size:cover, cover, cover;
+background-position:center, 45% 50%, center;
+background-repeat:no-repeat;}
+@media (max-width:900px){.hero{background-image:var(--hero-overlay), url('hero-bg-mobile.jpg'), var(--hero-fallback);background-position:center, 44% 55%, center;}}
 .hero .container{position:relative;z-index:1;}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);color:var(--navy);font-weight:600;font-size:13px;letter-spacing:.01em;padding:9px 19px;border-radius:980px;margin-bottom:30px;box-shadow:var(--shadow-xs);}
 .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(246,104,113,0.18);animation:pulse 2.4s ease-in-out infinite;}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(246,104,113,0.18);}50%{box-shadow:0 0 0 7px rgba(246,104,113,0.1);}}
 .hero h1{font-size:clamp(36px, 5.8vw, 68px);max-width:900px;margin:0 auto 26px;line-height:1.08;letter-spacing:-0.03em;}
-.hero h1 em{font-style:normal;background:linear-gradient(120deg, var(--coral), var(--coral-dark));-webkit-background-clip:text;background-clip:text;color:transparent;}
-.hero p.sub{font-size:clamp(17px, 2vw, 21px);color:var(--gray);max-width:640px;margin:0 auto 42px;line-height:1.55;font-weight:400;}
+.hero h1{color:#fff;}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg, #ffa3a9, var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.hero p.sub{font-size:clamp(17px, 2vw, 21px);color:rgba(255,255,255,0.86);max-width:640px;margin:0 auto 42px;line-height:1.55;font-weight:400;}
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:22px;}
-.hero-note{font-size:13px;color:var(--gray-light);letter-spacing:.01em;}
-.scroll-cue{display:inline-flex;margin-top:56px;width:30px;height:46px;border-radius:16px;border:1.5px solid var(--line-strong);justify-content:center;padding-top:8px;}
-.scroll-cue::before{content:"";width:4px;height:8px;border-radius:2px;background:var(--gray-light);animation:scrollcue 2s var(--ease-out) infinite;}
+.hero-note{font-size:13px;color:var(--gray);letter-spacing:.01em;}
+.scroll-cue{display:inline-flex;margin-top:56px;width:30px;height:46px;border-radius:16px;border:1.5px solid rgba(255,255,255,0.35);justify-content:center;padding-top:8px;}
+.scroll-cue::before{content:"";width:4px;height:8px;border-radius:2px;background:rgba(255,255,255,0.7);animation:scrollcue 2s var(--ease-out) infinite;}
 @keyframes scrollcue{0%{transform:translateY(0);opacity:1;}70%{opacity:0;}100%{transform:translateY(14px);opacity:0;}}
 
 .section{padding:140px 0;}
@@ -166,7 +176,7 @@ body.nav-open{overflow:hidden;}
 .transform-card:hover .transform-img img{transform:scale(1.06);}
 .transform-label{position:absolute;top:16px;left:16px;padding:7px 17px;border-radius:980px;font-size:12px;font-weight:700;letter-spacing:.03em;color:#fff;text-transform:uppercase;box-shadow:0 6px 14px -4px rgba(0,0,0,0.3);}
 .transform-label-before{background:rgba(49,55,87,0.88);}
-.transform-label-after{background:var(--coral);}
+.transform-label-after{background:#d63f4b;}
 .transform-card p{padding:18px 22px;font-size:14px;color:var(--gray);line-height:1.55;}
 @media (max-width:720px){.transform-grid{grid-template-columns:1fr;}.transform-arrow{transform:rotate(90deg);margin:0 auto;}}
 
@@ -203,14 +213,14 @@ body.nav-open{overflow:hidden;}
 .tl-card ul{list-style:none;}
 .tl-card li{color:var(--gray);font-size:14px;margin-bottom:9px;padding-left:19px;position:relative;line-height:1.5;}
 .tl-card li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--coral);}
-.tl-note{font-size:12.5px;color:var(--gray-light);margin:-10px 0 16px;font-style:italic;}
+.tl-note{font-size:12.5px;color:var(--gray);margin:-10px 0 16px;font-style:italic;}
 
 .avatar-box{background:linear-gradient(155deg, var(--navy), var(--navy-deep));border-radius:32px;padding:68px;color:#fff;display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;box-shadow:0 50px 100px -34px rgba(49,55,87,0.55);position:relative;overflow:hidden;}
 .avatar-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 10%, rgba(246,104,113,0.22), transparent 55%);}
 .avatar-box > div, .avatar-box > ul{position:relative;}
 .avatar-box h2{color:#fff;font-size:clamp(24px,3vw,33px);margin-bottom:20px;line-height:1.2;letter-spacing:-0.025em;}
 .avatar-box p{color:rgba(255,255,255,0.72);font-size:15.5px;margin-bottom:15px;line-height:1.6;}
-.avatar-box .tag{display:inline-block;background:rgba(246,104,113,0.9);color:#fff;font-size:12px;font-weight:600;padding:8px 17px;border-radius:980px;margin-bottom:22px;letter-spacing:.02em;}
+.avatar-box .tag{display:inline-block;background:#d63f4b;color:#fff;font-size:12px;font-weight:600;padding:8px 17px;border-radius:980px;margin-bottom:22px;letter-spacing:.02em;}
 .avatar-list{list-style:none;}
 .avatar-list li{background:rgba(255,255,255,0.07);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.09);border-radius:16px;padding:17px 21px;margin-bottom:12px;font-size:15px;color:#fff;font-style:italic;transition:background var(--dur) ease, transform var(--dur) var(--ease-out);}
 .avatar-list li:hover{background:rgba(255,255,255,0.11);transform:translateX(4px);}
@@ -237,7 +247,7 @@ body.nav-open{overflow:hidden;}
 .price-list li{padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;display:flex;gap:12px;align-items:flex-start;color:var(--ink);}
 .price-list li:last-child{border-bottom:none;}
 .price-list li::before{content:"✓";color:#fff;font-weight:700;font-size:11px;background:var(--coral);width:19px;height:19px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;box-shadow:0 3px 8px -2px rgba(246,104,113,0.6);}
-.guarantee-line{font-size:12px;color:var(--gray-light);margin-top:18px;}
+.guarantee-line{font-size:12px;color:var(--gray);margin-top:18px;}
 
 
 .guarantee-box{max-width:800px;margin:0 auto;background:var(--surface);border-radius:28px;padding:46px 50px;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;gap:26px;align-items:flex-start;}
@@ -262,7 +272,7 @@ body.nav-open{overflow:hidden;}
 .final-cta h2{color:#fff;font-size:clamp(28px,4vw,44px);margin-bottom:20px;letter-spacing:-0.03em;}
 .final-cta p{color:rgba(255,255,255,0.65);max-width:520px;margin:0 auto 38px;font-size:17px;line-height:1.55;}
 
-footer{background:#14172c;color:rgba(255,255,255,0.4);text-align:center;padding:44px 0;font-size:13px;}
+footer{background:#14172c;color:rgba(255,255,255,0.62);text-align:center;padding:44px 0;font-size:13px;}
 footer .logo-text{color:#fff;}
 footer .logo{justify-content:center;margin-bottom:12px;}
 
@@ -291,7 +301,6 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 .section{padding:80px 0;}
 .pain-quote{padding:34px;}
 .price-card{padding:38px 28px;}
-.orb{display:none;}
 }
 @media (max-width:480px){
 .container{padding:0 20px;}
@@ -299,6 +308,40 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 .hero h1{padding:0 4px;}
 }
 @media (hover:none){.tilt{transform:none !important;}}
+.hero .eyebrow{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.22);color:#fff;box-shadow:none;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+.hero .btn-outline{background:rgba(255,255,255,0.1);color:#fff;border-color:rgba(255,255,255,0.4);}
+.hero .btn-outline:hover{background:rgba(255,255,255,0.18);}
+.hero .hero-note{color:rgba(255,255,255,0.72);}
+.header-cta-mobile{display:none;}
+@media (max-width:900px){.header-cta-mobile{display:inline-flex;margin-left:auto;padding:9px 16px;font-size:13px;}}
+@media (max-width:480px){.hero-cta .btn{white-space:normal;line-height:1.3;text-align:center;}}
+.header-cta-mobile, .logo-mark, .menu-toggle{flex-shrink:0;}
+.nowrap{white-space:nowrap;}
+@media (max-width:600px){
+.brand-sub{display:none;}
+header .container{gap:10px;padding-left:20px;padding-right:20px;}
+.logo{gap:6px;min-width:0;}
+.logo-mark{width:28px;height:28px;}
+.logo-word{height:14px;}
+.header-cta-mobile{padding:8px 12px;font-size:12.5px;}
+}
+@media (max-width:420px){.logo-word{height:12px;}}
+@media (max-width:380px){
+header .container{gap:6px;padding-left:16px;padding-right:16px;}
+.logo{gap:5px;min-width:0;}
+.logo-mark{width:24px;height:24px;}
+.logo-word{height:10.5px;}
+.header-cta-mobile{padding:7px 10px;font-size:12px;}
+.menu-toggle{width:34px;}
+}
+@media (min-width:721px) and (max-width:1024px){
+#piliers .included-grid, .timeline{grid-template-columns:repeat(3,1fr);gap:16px;}
+#piliers .included-card, .tl-card{padding:24px;}
+}
+@media (min-width:1025px){
+#offre .included-grid{grid-template-columns:repeat(4,1fr);}
+#offre .included-card{padding:28px;}
+}
 </style>
 </head>
 <body>
@@ -319,6 +362,7 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <li><a href="#faq">FAQ</a></li>
 </ul>
 <a href="https://calendly.com/accompagnon/diagnostic-business-30-min-gratuit" class="btn btn-coral btn-small magnetic nav-cta-desktop" target="_blank" rel="noopener noreferrer">Réserver mon Diagnostic</a>
+<a href="https://calendly.com/accompagnon/diagnostic-business-30-min-gratuit" class="btn btn-coral btn-small header-cta-mobile" target="_blank" rel="noopener noreferrer">Réserver</a>
 <button class="menu-toggle" id="menuToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
 <span></span><span></span><span></span>
 </button>
@@ -336,14 +380,12 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 </div>
 
 <section class="hero">
-<div class="orb orb-1" aria-hidden="true"></div>
-<div class="orb orb-2" aria-hidden="true"></div>
 <div class="container">
 <span class="eyebrow load-in"><span class="dot"></span>Accompagnement individuel · 3 mois · Démarrage dès l'inscription</span>
-<h1 class="load-in">Avance avec un <em>plan clair</em>, au lieu de courir après le feu.</h1>
-<p class="sub load-in">J'aide les entrepreneurs solos et les travailleurs autonomes à structurer leur business ET leur tête — pour qu'ils avancent avec un plan clair au lieu de courir après le feu.</p>
+<h1 class="load-in">Tu es bloqué, débordé, ou tu n'arrives pas à <em>lancer ce que tu veux vraiment faire</em>?</h1>
+<p class="sub load-in">On identifie ensemble ce qui ne fonctionne pas, on bâtit un plan clair, et on met en place les systèmes — et les changements dans ta vie — qu'il faut pour que t'avances.</p>
 <div class="hero-cta load-in">
-<a href="https://calendly.com/accompagnon/diagnostic-business-30-min-gratuit" class="btn btn-coral magnetic" target="_blank" rel="noopener noreferrer">Réserver mon Diagnostic Business — 30 min</a>
+<a href="https://calendly.com/accompagnon/diagnostic-business-30-min-gratuit" class="btn btn-coral magnetic" target="_blank" rel="noopener noreferrer"><span>Réserver mon Diagnostic Business — <span class="nowrap">30 min</span></span></a>
 <a href="#piliers" class="btn btn-outline magnetic">Voir les 3 piliers</a>
 </div>
 <p class="hero-note load-in">30 minutes, sans engagement</p>
@@ -354,36 +396,36 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <section class="section section-alt">
 <div class="container">
 <h2 class="section-title reveal">Tu reconnais cette réalité ?</h2>
-<p class="section-sub reveal">T'es pas un mauvais entrepreneur. T'es débordé intelligemment et t'as besoin d'un système, pas d'une autre app de productivité.</p>
+<p class="section-sub reveal">T'es pas un mauvais entrepreneur. Quelque chose bloque — pis tant qu'on l'a pas identifié, une autre app ou un autre template changera pas grand-chose.</p>
 
-<div class="pain-quote reveal"><p>"Je porte tout moi-même — sans systèmes qui tiennent, mon business pourrait s'effondrer si j'arrêtais une semaine."</p></div>
+<div class="pain-quote reveal"><p>"Je travaille fort, mais j'avance pas. Pis le projet que je veux vraiment lancer est encore dans ma tête."</p></div>
 
 <div class="pain-grid reveal-stagger">
-<div class="pain-item reveal spotlight" style="--i:0;background-image:url('https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Le réveil sonne, pis c'est déjà le sprint : courriels, clients, urgences, zéro structure pour la journée.</span></div>
+<div class="pain-item reveal spotlight" style="--i:0;background-image:url('https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Le réveil sonne, pis c'est déjà le sprint : courriels, clients, urgences, zéro structure pour la journée.</span></div>
 <div class="pain-item reveal spotlight" style="--i:1;background-image:url('https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Tu finis ta journée vidé, pis y'a plus rien pour avancer ton propre projet.</span></div>
 <div class="pain-item reveal spotlight" style="--i:2;background-image:url('https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">La charge mentale pèse sur toi seul — rien n'est écrit nulle part, tout est dans ta tête.</span></div>
 <div class="pain-item reveal spotlight" style="--i:3;background-image:url('https://images.pexels.com/photos/5717884/pexels-photo-5717884.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Le travail suit jusqu'au soir : le téléphone qui vibre, les messages clients qui n'arrêtent jamais.</span></div>
 <div class="pain-item reveal spotlight" style="--i:4;background-image:url('https://images.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">T'as déjà essayé des apps pis des to-do lists, mais rien tient plus qu'une semaine.</span></div>
-<div class="pain-item reveal spotlight" style="--i:5;background-image:url('https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Un imprévu — un client qui lâche, une urgence perso — pis toute la semaine déraille.</span></div>
+<div class="pain-item reveal spotlight" style="--i:5;background-image:url('https://images.pexels.com/photos/4386321/pexels-photo-4386321.jpeg?auto=compress&cs=tinysrgb&w=800')"><span class="txt">Tu plafonnes : mêmes clients, mêmes revenus, pis tu sais pas c'est quoi la prochaine étape.</span></div>
 </div>
 </div>
 </section>
 
 <section class="section">
 <div class="container">
-<h2 class="section-title reveal">D'un business qui repose sur toi à un business qui roule avec toi</h2>
+<h2 class="section-title reveal">De bloqué et débordé à un plan clair qui avance</h2>
 <p class="section-sub reveal">Pas une promesse abstraite. Un vrai changement dans ta réalité d'entrepreneur.</p>
 <div class="transform-grid reveal-stagger">
 <div class="transform-card reveal" style="--i:0">
 <div class="transform-img"><img src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Entrepreneur débordé au bureau" loading="lazy"></div>
 <span class="transform-label transform-label-before">Avant</span>
-<p>Journées chaotiques, tout repose sur toi, zéro système qui survit sans intervention constante.</p>
+<p>Tu cours partout, tu sais pas trop ce qui bloque, pis ce qui compte vraiment reste sur la glace.</p>
 </div>
 <div aria-hidden="true" class="transform-arrow reveal" style="--i:1">→</div>
 <div class="transform-card reveal" style="--i:2">
 <div class="transform-img"><img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Entrepreneur organisé et serein" loading="lazy"></div>
 <span class="transform-label transform-label-after">Après</span>
-<p>Des systèmes qui tiennent, du temps protégé pour avancer, un business qui roule même quand t'es pas dessus 24/7.</p>
+<p>Tu sais ce qui bloquait, t'as un plan clair, pis les systèmes et les habitudes qu'il faut pour avancer — y compris sur ce que tu voulais lancer.</p>
 </div>
 </div>
 </div>
@@ -397,7 +439,7 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="included-card reveal spotlight tilt" style="--i:0">
 <div class="icon" aria-hidden="true">🗂️</div>
 <h3>1. Structure &amp; Systèmes</h3>
-<p>Tes processus, tes outils pis l'organisation de ton travail. On sort ce qui est dans ta tête pour le mettre dans un système qui roule sans que tu le portes à bout de bras.</p>
+<p>Une fois qu'on sait ce qui bloque : tes processus, tes outils pis l'organisation de ton travail. On sort ce qui est dans ta tête pour en faire un système qui t'aide à avancer.</p>
 </div>
 <div class="included-card reveal spotlight tilt" style="--i:1">
 <div class="icon" aria-hidden="true">🧠</div>
@@ -424,8 +466,8 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="founder-text">
 <span class="tag">Ton coach</span>
 <h2>Salut, moi c'est Sébastien.</h2>
-<p>Je suis entrepreneur moi aussi. J'ai bâti plusieurs projets, géré ma propre charge mentale, pis j'ai fini par comprendre que le vrai luxe, c'est pas plus d'heures, c'est des systèmes qui tiennent sans toi.</p>
-<p>Le Système Affaires, c'est le programme que j'aurais aimé avoir : pas de théorie, juste ce qui fonctionne vraiment pour structurer un business solo.</p>
+<p>Je suis entrepreneur moi aussi. J'ai bâti plusieurs projets, géré ma propre charge mentale, pis j'ai fini par comprendre qu'avant d'ajouter des outils ou des heures, faut comprendre ce qui bloque vraiment.</p>
+<p>Le Système Affaires, c'est le programme que j'aurais aimé avoir : pas de théorie, juste ce qui fonctionne vraiment pour débloquer un business solo pis le faire avancer.</p>
 <p class="founder-sign">— Sébastien, fondateur d'Accompagnon</p>
 </div>
 </div>
@@ -464,7 +506,7 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <section class="section" id="sessions">
 <div class="container">
 <h2 class="section-title reveal">3 mois, 3 phases</h2>
-<p class="section-sub reveal">Un accompagnement individuel qui démarre dès ton inscription. Chaque phase met l'accent sur un pilier, à ton rythme.</p>
+<p class="section-sub reveal">Un accompagnement individuel qui démarre dès ton inscription. On commence par comprendre ce qui bloque, ensuite on bâtit — un pilier à la fois, à ton rythme.</p>
 
 <div class="session-photo reveal">
 <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Appel de coaching business en visioconférence" loading="lazy">
@@ -473,12 +515,12 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="timeline reveal-stagger">
 <div class="tl-card reveal spotlight" style="--i:0">
 <div class="tl-num">1</div>
-<h3>Reprendre le contrôle</h3>
+<h3>Comprendre ce qui bloque</h3>
 <p class="tl-note">Mois 1</p>
 <ul>
-<li>Le Diagnostic Business : où sont les 3 zones de chaos prioritaires</li>
+<li>Le Diagnostic Business : identifier ce qui bloque vraiment, dans le business comme dans ta vie</li>
+<li>Un plan clair et priorisé, avant d'installer quoi que ce soit</li>
 <li>Structure &amp; Systèmes : processus, outils, organisation du travail</li>
-<li>Les premières heures récupérées et protégées à l'agenda</li>
 </ul>
 </div>
 <div class="tl-card reveal spotlight" style="--i:1">
@@ -510,14 +552,14 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="avatar-box reveal">
 <div>
 <span class="tag">C'est pour toi si…</span>
-<h2>Tu avances, mais tout repose sur toi.</h2>
-<p>Tu es entrepreneur, solopreneur ou travailleur autonome. Tu avances, mais au prix d'une structure qui tient — et d'une tête qui va bien.</p>
-<p>Le Système Affaires n'est pas du coaching business générique. C'est un accompagnement concret, francophone, pensé pour une vraie réalité de solo — pas une théorie de plus.</p>
+<h2>T'es bloqué, ou t'es débordé. Souvent les deux.</h2>
+<p>Tu es entrepreneur solo ou travailleur autonome. Soit t'arrives pas à passer au prochain niveau ou à lancer ce que tu veux vraiment faire. Soit t'es débordé, pis t'arrives pas à trouver les systèmes ou les solutions pour t'organiser.</p>
+<p>Le Système Affaires n'est pas du coaching business générique. On commence par identifier ce qui bloque — ensuite seulement, on bâtit le plan et les systèmes.</p>
 </div>
 <ul class="avatar-list">
-<li>"Je porte tout moi-même — sans systèmes qui tiennent."</li>
-<li>"Mon business pourrait s'effondrer si j'arrêtais une semaine."</li>
-<li>"J'ai de la misère à sortir mon offre/mon contenu du brouillon pour de vrai."</li>
+<li>"J'ai l'impression de plafonner — je sais pas c'est quoi la prochaine étape."</li>
+<li>"Le projet que je veux vraiment lancer est encore dans ma tête."</li>
+<li>"Je suis débordé pis j'arrive pas à m'organiser."</li>
 <li>"J'ai déjà essayé des outils/apps, mais rien est resté en place."</li>
 </ul>
 </div>
@@ -533,7 +575,7 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="price-card featured reveal tilt">
 <div class="price-shine"></div>
 <span class="price-badge">Accompagnement Le Système Affaires</span>
-<h3>3 mois pour structurer ton business et ta tête</h3>
+<h3>3 mois pour débloquer ce qui te retient et avancer</h3>
 <div class="price-amount price-locked"><span class="lock-icon" aria-hidden="true">🔒</span><span class="price-locked-text">Tarif discuté<br>en appel privé</span></div>
 <ul class="price-list">
 <li>Accompagnement individuel sur 3 mois</li>
@@ -579,7 +621,7 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 <div class="faq-item reveal" style="--i:2">
 <button class="faq-q" aria-expanded="false">C'est quoi la différence avec une app de productivité ou un template gratuit
 <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
-<div class="faq-a"><div class="faq-a-inner"><p>Une app te donne des cases à cocher. Ici t'as un accompagnement humain, un suivi aux 2 semaines et des systèmes pensés pour ta réalité — pas un template générique.</p></div></div>
+<div class="faq-a"><div class="faq-a-inner"><p>Une app te donne des cases à cocher. Ici on commence par identifier ce qui bloque, pis on bâtit avec toi un plan et des systèmes pensés pour ta réalité — avec un suivi humain aux 2 semaines.</p></div></div>
 </div>
 <div class="faq-item reveal" style="--i:3">
 <button class="faq-q" aria-expanded="false">Et si ça marche pas pour moi
@@ -602,8 +644,8 @@ footer .logo{justify-content:center;margin-bottom:12px;}
 
 <section class="final-cta">
 <div class="container">
-<h2 class="reveal">Prêt à structurer ton business et ta tête ?</h2>
-<p class="reveal">Réserve ton Diagnostic Business gratuit de 30 minutes. On regarde ta situation ensemble, sans pression.</p>
+<h2 class="reveal">Prêt à comprendre ce qui te bloque?</h2>
+<p class="reveal">Réserve ton Diagnostic Business gratuit de 30 minutes. On identifie ensemble ce qui ne fonctionne pas, sans pression.</p>
 <a href="https://calendly.com/accompagnon/diagnostic-business-30-min-gratuit" class="btn btn-coral reveal magnetic" target="_blank" rel="noopener noreferrer">Réserver mon Diagnostic Business</a>
 </div>
 </section>
